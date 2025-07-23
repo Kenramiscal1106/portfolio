@@ -8,3 +8,5 @@ export class MenuStore {
 		this.current = false;
 	}
 }
+
+export const menu = new MenuStore();

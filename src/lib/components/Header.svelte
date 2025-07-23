@@ -1,10 +1,9 @@
 <script lang="ts">
 	import { MediaQuery } from 'svelte/reactivity';
 	import Button from './Button.svelte';
-	import { MenuStore } from '$lib/store.svelte';
+	import { menu } from '$lib/store.svelte';
 	const small = new MediaQuery('max-width: 512px');
-	// $inspect(small);
-	const menu = new MenuStore();
+	$inspect(small.current);
 </script>
 
 <header class="bg-neutrals-100">
