@@ -19,11 +19,11 @@
 		<div class="flex flex-col gap-1">
 			<h1 class="text-2xl font-bold sm:text-3xl">{title}</h1>
 
-			<p class="text-sm sm:text-base">
+			<p class="line-clamp-3 max-h-[8ch] overflow-hidden text-sm sm:text-base">
 				{description}
 			</p>
 		</div>
-		<div class="flex gap-4 text-xs sm:text-sm">
+		<div class="flex flex-wrap gap-4 text-xs sm:text-sm">
 			<Label>
 				<svg
 					class="aspect-square h-6"
