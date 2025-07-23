@@ -7,7 +7,7 @@
 </script>
 
 <header class="bg-neutrals-100">
-	<nav class=" mx-auto flex max-w-2xl items-center justify-between px-6 py-4">
+	<nav class=" mx-auto flex max-w-2xl items-center justify-between px-6 py-3 sm:py-4">
 		<div>
 			<a href="/"><img src="/Logo.svg" alt="logo" height="34" width="124" /></a>
 		</div>
