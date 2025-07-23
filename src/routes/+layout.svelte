@@ -6,6 +6,10 @@
 	let { children } = $props();
 </script>
 
+<svelte:head>
+	<link rel="icon" href={`/favicon-light.png`} />
+</svelte:head>
+
 <Header />
 <main class="mx-auto max-w-5xl p-5">
 	{@render children()}
