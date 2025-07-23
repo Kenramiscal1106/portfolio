@@ -1,6 +1,6 @@
 <label
 	for="search-bar"
-	class="bg-neutrals-300 has-focus:ring-neutrals-500 flex gap-2 rounded-xl px-4 py-3 text-sm has-focus:ring-2 has-focus:ring-inset"
+	class="bg-neutrals-300 has-focus:ring-neutrals-500 flex gap-2 overflow-hidden rounded-xl px-4 py-4 text-sm has-focus:ring-2 has-focus:ring-inset"
 >
 	<svg class="aspect-square w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<path
@@ -14,7 +14,7 @@
 
 	<input
 		class="text-neutrals-900 placeholder:text-neutrals-800 grow focus:outline-none"
-		placeholder="Search for a keyword, title"
+		placeholder="Search for a keyword, title, etc."
 		id="search-bar"
 	/>
 </label>
