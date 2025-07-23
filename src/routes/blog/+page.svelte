@@ -1,6 +1,5 @@
 <script lang="ts">
 	import BlogCard from '$lib/components/BlogCard.svelte';
-	import Search from '$lib/components/Search.svelte';
 	const blogData = {
 		title: 'My Coding Journey',
 		description:
@@ -18,7 +17,6 @@
 </svelte:head>
 
 <div class="flex flex-col gap-6">
-	<Search />
 	<BlogCard {...blogData} />
 	<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 		{#each new Array(12) as _}
