@@ -7,8 +7,9 @@
 		readTime: string;
 		imageURL: string;
 		imageAlt: string;
+		slug: string;
 	}
-	const { title, description, date, readTime, imageURL, imageAlt } = $props();
+	const { title, description, date, readTime, imageURL, imageAlt, slug } = $props();
 </script>
 
 <article class="overflow-hidden rounded-xl">
@@ -17,7 +18,11 @@
 	</div>
 	<div class="bg-neutrals-100 flex flex-col gap-4 px-5 py-4">
 		<div class="flex flex-col gap-1">
-			<h1 class="text-2xl font-bold sm:text-3xl">{title}</h1>
+			<h1 class="text-xl font-bold active:underline sm:text-2xl sm:active:no-underline lg:text-3xl">
+				<a href="/blog/{slug}">
+					{title}
+				</a>
+			</h1>
 
 			<p class="line-clamp-3 max-h-[8ch] overflow-hidden text-sm sm:text-base">
 				{description}
