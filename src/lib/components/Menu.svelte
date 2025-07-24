@@ -11,9 +11,9 @@
 		}}
 	></button>
 	<div
-		class="bg-neutrals-100 absolute bottom-0 left-0 flex w-screen flex-col p-6 text-center text-lg"
+		class="bg-neutrals-100 absolute right-0 bottom-0 flex h-1/2 w-screen flex-col p-6 text-center text-lg sm:top-0 sm:w-80"
 	>
-		<a class="py-2" href="/home">Home</a>
+		<a class="py-2" href="/">Home</a>
 		<a class="py-2" href="/blog">Blog</a>
 		<a class="py-2" href="/contact">Contact Me</a>
 	</div>
