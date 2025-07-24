@@ -7,7 +7,8 @@
 		date: 'July 20, 2022',
 		readTime: '9 min',
 		imageURL: 'string',
-		imageAlt: 'A mountain climber'
+		imageAlt: 'A mountain climber',
+		slug: 'my-coding-journey'
 	};
 	// export let data: PageData;
 </script>
