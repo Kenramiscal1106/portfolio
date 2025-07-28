@@ -1,1 +1,9 @@
-// place files you want to import through the `$lib` alias in this folder.
+export type Post = {
+    title:string,
+    createdAt: string,
+    description: string,
+    readTime:number,
+    imageURL:string,
+    imageAlt: string
+    slug:string
+}
