@@ -3,19 +3,10 @@
 	import Label from '$lib/components/Label.svelte';
 
 	export let data: PageData;
-	const { title, description, date, readTime, imageURL, imageAlt } = {
-		title: 'My Coding Journey',
-		description:
-			'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut sint fugit, dicta a aliquid ',
-		date: 'July 20, 2022',
-		readTime: '9 min',
-		imageURL: 'string',
-		imageAlt: 'A mountain climber'
-	};
 </script>
 
 <div class="mb-4 sm:flex sm:flex-col sm:items-center">
-	<h1 class="mb-1 text-2xl font-bold sm:text-4xl">{title}</h1>
+	<h1 class="mb-1 text-2xl font-bold sm:text-4xl">{data.meta.title}</h1>
 	<div class="flex gap-3 text-sm">
 		<Label>
 			<svg
@@ -31,7 +22,7 @@
 				/>
 			</svg>
 
-			<span>{date}</span>
+			<span>{data.meta.createdAt}</span>
 		</Label>
 		<Label>
 			<svg class="aspect-square h-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -43,13 +34,16 @@
 				/>
 			</svg>
 
-			<span>{readTime}</span>
+			<span>{data.meta.readTime}</span>
 		</Label>
 	</div>
 </div>
-<div class="from-neutrals-600 to-neutrals-300 -mx-3 my-4 rounded-xl bg-gradient-to-bl">
-	<img src={imageURL} alt={imageAlt} class="aspect-video w-full" />
+<div
+	class="from-neutrals-600 to-neutrals-300 -mx-3 my-4 overflow-hidden rounded-xl bg-gradient-to-bl"
+>
+	<img src={data.meta.imageURL} alt={data.meta.imageAlt} class="aspect-video w-full" />
 </div>
-<div class="render-markdown mx-auto max-w-2xl">
+<div class="render-markdown mx-auto my-6 max-w-2xl">
+	<hr />
 	<data.content />
 </div>

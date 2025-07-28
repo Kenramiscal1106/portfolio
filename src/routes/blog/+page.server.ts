@@ -1,13 +1,7 @@
+import type { Post } from "$lib";
 import type { PageServerLoad } from "./$types";
 
-type Post = {
-    title:string,
-    createdAt: string,
-    description: string,
-    durationReadInMins:number,
-    imageURL:string,
-    slug:string
-}
+
 
 async function getPosts() {
     const posts: Post[] = [];
@@ -31,13 +25,5 @@ async function getPosts() {
 export const load: PageServerLoad = async () => {
   const posts = await getPosts();
   posts.map
-  return {posts: posts.map(post => ({
-    title: post.title,
-    description:post.description,
-    date:post.createdAt,
-    readTime: `${post.durationReadInMins} min`,
-    imageURL: post.imageURL,
-    imageAlt: post.description,
-    slug:post.slug
-  }))}
+  return {posts}
 };
