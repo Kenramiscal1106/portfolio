@@ -1,7 +1,8 @@
 <script lang="ts">
+	import type { PageData } from './$types';
 	import Label from '$lib/components/Label.svelte';
 
-	// import type { PageData } from './$types';
+	export let data: PageData;
 	const { title, description, date, readTime, imageURL, imageAlt } = {
 		title: 'My Coding Journey',
 		description:
@@ -13,8 +14,8 @@
 	};
 </script>
 
-<div class="mb-3">
-	<h1 class="mb-1 text-2xl font-bold">{title}</h1>
+<div class="mb-4 sm:flex sm:flex-col sm:items-center">
+	<h1 class="mb-1 text-2xl font-bold sm:text-4xl">{title}</h1>
 	<div class="flex gap-3 text-sm">
 		<Label>
 			<svg
@@ -46,6 +47,9 @@
 		</Label>
 	</div>
 </div>
-<div class="from-neutrals-600 to-neutrals-300 rounded-xl bg-gradient-to-bl">
+<div class="from-neutrals-600 to-neutrals-300 -mx-3 my-4 rounded-xl bg-gradient-to-bl">
 	<img src={imageURL} alt={imageAlt} class="aspect-video w-full" />
+</div>
+<div class="render-markdown mx-auto max-w-2xl">
+	<data.content />
 </div>
