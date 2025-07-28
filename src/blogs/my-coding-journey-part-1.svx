@@ -1,11 +1,10 @@
 ---
-layout: "@layouts/BlogLayout.astro"
-
-title: My coding Journey (part 1)
+title: My Coding Journey (part 1)
 createdAt: August 31 2022
 description: What I can remember from my journey of coding
-durationReadInMins: 5
+readTime: 5 min
 imageURL: /assets/blog/my-coding-journey-1.png
+imageAlt: coding climbing
 ---
 ### January 2020
 As far as I remember, it all began in January 2020. I was curious on how webpages work and I was interested to learn how to also make them.

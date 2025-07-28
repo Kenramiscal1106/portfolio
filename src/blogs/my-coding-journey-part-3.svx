@@ -1,10 +1,10 @@
 ---
-layout: "@layouts/BlogLayout.astro"
-title: My coding Journey (part 3)
+title: My Coding Journey (part 3)
 createdAt: February 1 2023
 description: 3rd year of my coding journey.
-durationReadInMins: 5
+readTime: 5 min
 imageURL: /assets/blog/my-coding-journey-1.png
+imageAlt: image of climbing
 ---
 
 It's been 3 years since I started coding. The second year was great. I learned a lot from various people and learned different frameworks. In this blogpost, I will explain my journey from January 2022 up until today.

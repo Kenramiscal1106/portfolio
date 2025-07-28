@@ -1,12 +1,11 @@
 ---
-layout: "@layouts/BlogLayout.astro"
-title: Sveltekit journey to 1.0
-createdAt: February 19 2023
-description: SvelteKit's journey to it's major version, explained
-durationReadInMins: 7
-imageURL: /assets/blog/sveltekit-journey-1.png
----
 
+title: Sveltekit journey to 1.0
+createdAt: February 19, 2023
+description: SvelteKit's journey to it's major version, explained
+readTime: 7 min
+imageURL: /assets/blog/sveltekit-journey-1.png
+imageAlt: SvelteKit Image
 ---
 
 After months of waiting, SvelteKit finally hit version 1.0. But before it got to where it is today, it had a rough ride which caused some headaches for developers who are using it to build their apps. Just more than 4 months ago, Sveltekit released some breaking changes to its API. If you want some more information on the breaking changes, go to the [Github discussion](https://github.com/sveltejs/kit/discussions/5748) in the sveltekit repo. But here are some of the changes made:
