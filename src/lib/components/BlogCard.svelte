@@ -1,24 +1,17 @@
 <script lang="ts">
+	import type { Post } from '$lib';
 	import Label from './Label.svelte';
-	interface Props {
-		title: string;
-		description: string;
-		date: string;
-		readTime: string;
-		imageURL: string;
-		imageAlt: string;
-		slug: string;
-	}
-	const { title, description, date, readTime, imageURL, imageAlt, slug } = $props();
+	type Props = Post;
+	const { title, description, createdAt, readTime, imageURL, imageAlt, slug }: Props = $props();
 </script>
 
-<article class="overflow-hidden rounded-xl">
+<article class="flex flex-col overflow-hidden rounded-xl">
 	<div class="from-neutrals-600 to-neutrals-300 bg-gradient-to-b">
 		<img src={imageURL} alt={imageAlt} class="aspect-video w-full" />
 	</div>
-	<div class="bg-neutrals-100 flex h-full flex-col gap-4 px-5 py-4">
+	<div class="bg-neutrals-100 flex grow flex-col justify-between gap-4 px-5 py-4">
 		<div class="flex flex-col gap-1">
-			<h1 class="text-xl font-bold active:underline sm:text-2xl sm:active:no-underline lg:text-3xl">
+			<h1 class="text-xl font-bold active:underline sm:text-2xl sm:active:no-underline lg:text-2xl">
 				<a href="/blog/{slug}">
 					{title}
 				</a>
@@ -43,7 +36,7 @@
 					/>
 				</svg>
 
-				<span>{date}</span>
+				<span>{createdAt}</span>
 			</Label>
 			<Label>
 				<svg class="aspect-square h-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -60,6 +53,3 @@
 		</div>
 	</div>
 </article>
-
-<style>
-</style>
