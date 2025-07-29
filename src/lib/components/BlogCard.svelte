@@ -26,7 +26,7 @@
 					{description}
 				</p>
 			</div>
-			<div class="flex flex-wrap gap-4 text-xs sm:text-sm">
+			<div class="flex flex-wrap gap-4 text-sm">
 				<Label>
 					<svg
 						class="aspect-square h-6"
