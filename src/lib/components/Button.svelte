@@ -18,11 +18,22 @@
 </script>
 
 {#if href}
-	<a {href} class="flex gap-2 rounded-lg p-2 {btnclass[variant]} {className ?? ''}" {onclick}>
+	<a
+		{href}
+		class="flex items-center gap-2 rounded-lg p-2 transition-colors duration-100 {btnclass[
+			variant
+		]} {className ?? ''}"
+		{onclick}
+	>
 		{@render children()}
 	</a>
 {:else}
-	<button class="flex gap-2 rounded-lg p-2 {btnclass[variant]} {className ?? ''}" {onclick}>
+	<button
+		class="flex items-center gap-2 rounded-lg p-2 transition-colors duration-100 {btnclass[
+			variant
+		]} {className ?? ''}"
+		{onclick}
+	>
 		{@render children()}
 	</button>
 {/if}
