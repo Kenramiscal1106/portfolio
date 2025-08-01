@@ -164,9 +164,9 @@
 <h2>Latest from blog</h2>
 
 <style>
-	@import '../app.css';
+	@import 'tailwindcss';
 	h2 {
-		@apply my-4 text-center text-2xl font-bold;
+		@apply my-4 scroll-m-20 text-center text-2xl font-bold;
 	}
 	div.link-set svg {
 		@apply transition-all duration-200;

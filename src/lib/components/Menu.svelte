@@ -15,7 +15,7 @@
 {#if menu.current}
 	<button
 		aria-label="overlay"
-		class="bg-neutrals-100/35 absolute top-0 left-0 h-dvh w-screen backdrop-blur-xs"
+		class="bg-neutrals-100/35 fixed top-0 left-0 z-30 h-dvh w-screen backdrop-blur-xs"
 		in:fade={{ duration: 200 }}
 		out:fade={{ duration: 200 }}
 		onclick={() => {
@@ -23,7 +23,7 @@
 		}}
 	></button>
 	<aside
-		class="bg-neutrals-100/40 absolute right-0 bottom-0 h-dvh w-full max-w-64 p-6 text-center text-lg backdrop-blur-xs sm:top-0 sm:w-80"
+		class="bg-neutrals-100/40 fixed right-0 bottom-0 z-30 h-dvh w-full max-w-64 p-6 text-center text-lg backdrop-blur-sm sm:top-0 sm:w-80"
 		in:fly={{ x: '100%', duration: 200, easing: sineInOut, opacity: 1 }}
 		out:fade={{ duration: 200 }}
 	>

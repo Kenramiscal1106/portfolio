@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Footer from '$lib/components/Footer.svelte';
 	import Header from '$lib/components/Header.svelte';
+	import Menu from '$lib/components/Menu.svelte';
 	import '../app.css';
 
 	let { children } = $props();
@@ -11,7 +12,8 @@
 </svelte:head>
 
 <Header />
-<main class="mx-auto min-h-dvh max-w-5xl px-4 py-6">
+<Menu />
+<main class="mx-auto mt-20 min-h-dvh max-w-5xl px-4 py-6">
 	{@render children()}
 </main>
 <Footer />

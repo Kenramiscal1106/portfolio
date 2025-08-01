@@ -5,6 +5,4 @@
 	$inspect(small.current);
 </script>
 
-<header class="bg-neutrals-100">
-	<Nav />
-</header>
+<Nav />
