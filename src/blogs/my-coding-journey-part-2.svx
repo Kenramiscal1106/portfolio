@@ -38,4 +38,3 @@ If you don't know what markdown is, It's actually just a file or string that get
 - I learned node.js but it was too hard for me.
 - I learned a bit of c++ but quit it afterwards due to it's difficulty.
 - In the course of the year, I spent most of my time doing school works.
----
