@@ -2,6 +2,10 @@
 	import Button from '$lib/components/Button.svelte';
 </script>
 
+<svelte:head>
+	<title>KENDAN</title>
+</svelte:head>
+
 <div class="flex flex-col items-center">
 	<div class="text-center text-lg font-bold">Hello there.</div>
 	<h1 class="mb-6 text-center text-5xl font-bold">I am Ken, a web developer.</h1>

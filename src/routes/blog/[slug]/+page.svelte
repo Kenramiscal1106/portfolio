@@ -6,6 +6,12 @@
 	export let data: PageData;
 </script>
 
+<svelte:head>
+	<title>
+		{data.meta.title} | KENDAN Blog
+	</title>
+</svelte:head>
+
 <div class="mb-4 sm:flex sm:flex-col sm:items-center">
 	<h1 class="mb-1 text-2xl font-bold sm:text-4xl">{data.meta.title}</h1>
 	<div class="flex gap-3 text-sm">
