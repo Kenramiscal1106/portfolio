@@ -5,7 +5,7 @@
 <div class="flex flex-col items-center">
 	<div class="text-center text-lg font-bold">Hello there.</div>
 	<h1 class="mb-6 text-center text-5xl font-bold">I am Ken, a web developer.</h1>
-	<div class="fill-neutrals-500 mb-6 flex items-center justify-center gap-4">
+	<div class="link-set fill-neutrals-500 mb-6 flex items-center justify-center gap-4">
 		<a
 			href="https://facebook.com/dnrmscl"
 			title="Facebook"
@@ -166,5 +166,8 @@
 	@import '../app.css';
 	h2 {
 		@apply my-4 text-center text-2xl font-bold;
+	}
+	div.link-set svg {
+		@apply transition-all duration-200;
 	}
 </style>
