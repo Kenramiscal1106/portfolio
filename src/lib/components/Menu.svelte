@@ -4,6 +4,7 @@
 	import { bounceInOut, sineInOut } from 'svelte/easing';
 	import { fade, fly } from 'svelte/transition';
 	import Button from './Button.svelte';
+	import MenuLink from './MenuLink.svelte';
 	onNavigate(({ to, from }) => {
 		if (to?.route.id !== from?.route.id) {
 			menu.close();
@@ -21,7 +22,7 @@
 			menu.close();
 		}}
 	></button>
-	<div
+	<aside
 		class="bg-neutrals-100/40 absolute right-0 bottom-0 h-dvh w-full max-w-64 p-6 text-center text-lg backdrop-blur-xs sm:top-0 sm:w-80"
 		in:fly={{ x: '100%', duration: 200, easing: sineInOut, opacity: 1 }}
 		out:fade={{ duration: 200 }}
@@ -38,10 +39,16 @@
 				/>
 			</svg>
 		</Button>
-		<div class="flex flex-col">
-			<a class="py-2" href="/">Home</a>
-			<a class="py-2" href="/blog">Blog</a>
-			<a class="py-2" href="/contact">Contact Me</a>
+		<div class="flex flex-col gap-1.5">
+			<MenuLink href="/">Home</MenuLink>
+			<MenuLink href="/blog">Blog</MenuLink>
+			<MenuLink href="/contact">Contact Me</MenuLink>
+			<Button
+				variant={'neutral'}
+				href="Curriculum Vitae.pdf"
+				target="_blank"
+				download="Curriculum Vitae">Download CV</Button
+			>
 		</div>
-	</div>
+	</aside>
 {/if}
