@@ -29,7 +29,7 @@
 {#if href}
 	<a
 		{href}
-		class="flex items-center justify-center gap-2 rounded-lg p-2 transition-colors duration-100 {btnclass[
+		class="flex items-center justify-center gap-2 rounded-lg px-3 py-1.5 transition-colors duration-100 {btnclass[
 			variant
 		]} {className ?? ''}"
 		{onclick}
@@ -39,7 +39,7 @@
 	</a>
 {:else}
 	<button
-		class="flex items-center justify-center gap-2 rounded-lg p-2 transition-colors duration-100 {btnclass[
+		class="flex items-center justify-center gap-2 rounded-lg px-3 py-1.5 transition-colors duration-100 {btnclass[
 			variant
 		]} {className ?? ''}"
 		{...props}
