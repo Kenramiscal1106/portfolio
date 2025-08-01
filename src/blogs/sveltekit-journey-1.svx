@@ -117,7 +117,7 @@ export function load({params}) {
 
 But wait, there's more! You can change the `+page.js/ts` name to `+page.server.js/ts` so that it will only run on the server. This is useful if you're interfacing with your database, or accessing private environment variables. But there are key differences to `+page.server.js/ts` and `+page.js/ts`. Here are some of them:
 
-| `+page.server.js/ts`                                                   | `+page.js/ts`                                                 |
+| +page.server.js/ts                                                     | +page.js/ts                                                   |
 | ---------------------------------------------------------------------- | ------------------------------------------------------------- |
 | only runs on server                                                    | Runs on server, and client during hydration                   |
 | can access private environment variables, interface with your database | can only access public variables and make an api call         |

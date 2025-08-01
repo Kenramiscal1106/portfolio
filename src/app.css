@@ -36,7 +36,11 @@
 	}
 	html,
 	body {
-		@apply bg-neutrals-200 overflow-x-hidden scroll-smooth;
+		@apply bg-neutrals-200 overflow-x-hidden;
+	}
+	html {
+			@apply scroll-smooth;
+
 	}
 	a {
 		outline: none;
@@ -86,6 +90,15 @@
 		}
 		pre {
 			@apply rounded-xl p-5;
+		}
+		
+		table {
+			* {
+				@apply p-2 border border-neutrals-400;
+			}
+			th {
+				@apply bg-neutrals-300;
+			}
 		}
 	}
 }
