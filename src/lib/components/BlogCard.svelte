@@ -10,7 +10,9 @@
 </script>
 
 <a href="/blog/{slug}">
-	<article class="flex flex-col overflow-hidden rounded-xl">
+	<article
+		class="flex h-full flex-col overflow-hidden rounded-xl transition-all duration-150 hover:-translate-y-1 hover:shadow-lg"
+	>
 		<div class="from-neutrals-600 to-neutrals-300 bg-gradient-to-b">
 			<img src={imageURL} alt={imageAlt} class="aspect-video w-full" />
 		</div>
