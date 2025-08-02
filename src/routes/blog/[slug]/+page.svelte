@@ -50,9 +50,11 @@
 >
 	<img src={data.meta.imageURL} alt={data.meta.imageAlt} class="aspect-video w-full" />
 </div>
-<div class="render-markdown mx-auto my-6 max-w-2xl">
+<div class="mx-auto my-6 max-w-2xl">
 	<hr />
-	<data.content />
+	<div class="render-markdown">
+		<data.content />
+	</div>
 	<hr />
 	<div class="flex justify-between">
 		<Button href="/" variant="outline" class="py-1.5"
@@ -91,3 +93,7 @@
 		</Button>
 	</div>
 </div>
+
+<style>
+	@import '../../../app.css';
+</style>
