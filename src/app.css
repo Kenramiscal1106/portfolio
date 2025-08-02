@@ -11,6 +11,33 @@
 	--color-neutrals-300: hsl(230, 10%, 80%);
 	--color-neutrals-200: hsl(230, 11%, 89%);
 	--color-neutrals-100: hsl(230, 9%, 98%);
+	--color-accent-900: hsla(178, 96%, 11%, 1);
+	--color-accent-800: hsla(177, 84%, 17%, 1);
+	--color-accent-700: hsla(177, 80%, 24%, 1);
+	--color-accent-600: hsla(177, 69%, 38%, 1);
+	--color-accent-500: hsla(177, 71%, 46%, 1);
+	--color-accent-400: hsla(177, 86%, 67%, 1);
+	--color-accent-300: hsla(177, 91%, 84%, 1);
+	--color-accent-200: hsla(177, 86%, 84%, 1);
+	--color-accent-100: hsla(177, 100%, 91%, 1);
+	--color-success-900: hsla(145, 100%, 15%, 1);
+	--color-success-800: hsla(145, 98%, 20%, 1);
+	--color-success-700: hsla(145, 77%, 28%, 1);
+	--color-success-600: hsla(145, 70%, 39%, 1);
+	--color-success-500: hsla(145, 64%, 54%, 1);
+	--color-success-400: hsla(145, 74%, 61%, 1);
+	--color-success-300: hsla(145, 82%, 67%, 1);
+	--color-success-200: hsla(145, 85%, 73%, 1);
+	--color-success-100: hsla(145, 100%, 84%, 1);
+	--color-primary-900: hsla(201, 87%, 18%, 1);
+	--color-primary-800: hsla(202, 73%, 25%, 1);
+	--color-primary-700: hsla(201, 75%, 33%, 1);
+	--color-primary-600: hsla(201, 68%, 40%, 1);
+	--color-primary-500: hsla(201, 57%, 51%, 1);
+	--color-primary-400: hsla(201, 59%, 64%, 1);
+	--color-primary-300: hsla(201, 66%, 74%, 1);
+	--color-primary-200: hsla(201, 82%, 87%, 1);
+	--color-primary-100: hsla(201, 90%, 92%, 1);
 }
 
 @font-face {
@@ -39,14 +66,13 @@
 		@apply bg-neutrals-200 overflow-x-hidden;
 	}
 	html {
-			@apply scroll-smooth;
-
+		@apply scroll-smooth;
 	}
 	a {
 		outline: none;
 	}
 	hr {
-		@apply border-neutrals-300 rounded-sm border-2;
+		@apply border-neutrals-300 rounded-sm border-2 my-4;
 	}
 	div.render-markdown {
 		*:not(svg) {
@@ -91,14 +117,17 @@
 		pre {
 			@apply rounded-xl p-5;
 		}
-		
+
 		table {
 			* {
-				@apply p-2 border border-neutrals-400;
+				@apply border-neutrals-400 border p-2;
 			}
 			th {
 				@apply bg-neutrals-300;
 			}
+		}
+		a {
+			@apply text-primary-700 hover:text-primary-600 hover:underline font-medium;
 		}
 	}
 }
