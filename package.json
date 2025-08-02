@@ -55,6 +55,7 @@
     ]
   },
   "dependencies": {
+    "animejs": "^4.1.2",
     "shiki": "^3.8.1"
   }
 }
