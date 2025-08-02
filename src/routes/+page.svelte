@@ -55,7 +55,7 @@
 			</svg>
 		</a>
 		<a
-			href="https://linkedin.com"
+			href="https://www.linkedin.com/in/ken-daniele-ramiscal-1684b3376/"
 			title="LinkedIn Profile"
 			aria-label="LinkedIn Profile"
 			target="_blank"
