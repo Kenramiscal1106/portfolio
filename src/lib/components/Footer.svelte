@@ -1,4 +1,4 @@
-<footer class="bg-neutrals-900 text-neutrals-400 flex flex-col gap-3 px-4 py-6">
+<footer class="bg-neutrals-900 text-neutrals-400 mt-8 flex flex-col gap-3 px-4 py-6">
 	<svg
 		width="243"
 		height="66"
@@ -32,7 +32,7 @@
 	</svg>
 	<div class="flex py-2">
 		<div class="flex flex-1 flex-col gap-3">
-			<a href="/">Home</a><a href="/blog">Blogs</a><a href="/contact">Contacts</a><a
+			<a href="/">Home</a><a href="/blog">Blog</a><a href="/contact">Contacts</a><a
 				href="/Curriculum Vitae.pdf"
 				download="CV">Download CV</a
 			>
