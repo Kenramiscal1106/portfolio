@@ -1,11 +1,28 @@
-<script>
+<script lang="ts">
 	import { menu } from '$lib/store.svelte';
+	import { onMount } from 'svelte';
 	import Button from './Button.svelte';
+	let lastScrollY = $state(0);
+	let visible = $state(true);
+	function scrollVisible() {
+		const currentScrollY = window.scrollY;
+		visible = lastScrollY > currentScrollY;
+		lastScrollY = currentScrollY;
+	}
+	onMount(() => {
+		lastScrollY = window.scrollY;
+		window.addEventListener('scroll', scrollVisible);
+		return () => {
+			window.removeEventListener('scroll', scrollVisible);
+		};
+	});
 </script>
 
 <nav class="fixed top-2 left-1/2 z-20 w-full max-w-3xl -translate-x-1/2 px-3">
 	<div
-		class="bg-neutrals-100/50 flex items-center justify-between rounded-xl px-6 py-3 backdrop-blur-sm sm:py-4"
+		class="bg-neutrals-100/50 {visible
+			? 'translate-y-0 opacity-100'
+			: '-translate-y-4 opacity-0'} flex items-center justify-between rounded-xl px-6 py-3 backdrop-blur-sm transition-all duration-400 sm:py-4"
 	>
 		<div>
 			<a href="/"><img src="/Logo.svg" alt="logo" height="34" width="124" /></a>
