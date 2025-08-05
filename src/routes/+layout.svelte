@@ -13,7 +13,7 @@
 
 <Header />
 <Menu />
-<main class="mx-auto mt-20 min-h-dvh max-w-5xl px-4">
+<main class="mx-auto mt-24 min-h-dvh max-w-5xl px-4">
 	{@render children()}
 </main>
 <Footer />
