@@ -18,7 +18,7 @@
 	});
 </script>
 
-<nav class="fixed top-2 left-1/2 z-20 w-full max-w-3xl -translate-x-1/2 px-3">
+<nav class="fixed top-2 left-1/2 z-20 w-full max-w-5xl -translate-x-1/2 px-3">
 	<div
 		class="bg-neutrals-100/50 {visible
 			? 'translate-y-0 opacity-100'
