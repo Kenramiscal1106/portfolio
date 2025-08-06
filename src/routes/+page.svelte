@@ -3,6 +3,9 @@
 	import Button from '$lib/components/Button.svelte';
 	import { animate, stagger, svg, text, utils } from 'animejs';
 	import { onMount } from 'svelte';
+	import type { PageData } from './$types';
+	import Project from '$lib/components/Project.svelte';
+
 	const cssVar = (name: any) => ($el: any) => utils.get($el, name);
 	onMount(() => {
 		const { chars } = text.split('#intromsg', {
@@ -34,7 +37,7 @@
 			opacity: [0, 1],
 			scale: ['90%', '100%'],
 			duration: 150,
-			delay: 5000
+			delay: 6000
 		});
 		animate('#hero-container', {
 			backgroundColor: [cssVar('--color-neutrals-200'), cssVar('--color-neutrals-100')],
@@ -42,6 +45,8 @@
 			delay: 3000
 		});
 	});
+
+	export let data: PageData;
 </script>
 
 <svelte:head>
@@ -156,46 +161,13 @@
 </div>
 
 <h2 id="projects-created">Projects Created</h2>
-<p>
-	Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae accusamus id, pariatur libero
-	impedit eligendi ab ea provident at deserunt minima perferendis in dolorum necessitatibus autem.
-	Ex, ducimus. Consequatur, corporis.
-</p>
-<p>
-	Explicabo, incidunt! Tenetur asperiores, voluptate odio amet rem quisquam. Hic ea ratione
-	distinctio. Soluta odit dicta similique tempora laborum consequatur, id voluptatibus ullam
-	deserunt autem! Saepe assumenda perspiciatis cum facilis.
-</p>
-<p>
-	Quasi recusandae consequuntur dolorum, et inventore ducimus sequi aliquid voluptates accusamus
-	minima quas consequatur voluptate minus odit ipsum unde omnis repellat distinctio eius eos non
-	molestiae vitae deleniti. Perferendis, ut.
-</p>
-<p>
-	Officiis modi hic voluptas! Laboriosam expedita, minima tempora iure nemo ipsum repellat ducimus
-	explicabo assumenda, deleniti quisquam! Reprehenderit eius officia beatae porro. Soluta beatae nam
-	odio aut consequatur ducimus molestiae!
-</p>
-<p>
-	Id maiores incidunt recusandae dicta aspernatur ea, delectus ex ipsam iste, dolorem inventore
-	nihil quos pariatur vel velit voluptatum libero adipisci molestiae eveniet excepturi dignissimos
-	architecto! Expedita vel iste dolorum!
-</p>
-<p>
-	Impedit omnis, nemo illo similique repudiandae quo, fugiat aut at non quam cum, quae illum! Iste
-	neque sint iusto optio illo, dolor nulla unde ducimus recusandae aliquam architecto! Accusamus,
-	neque.
-</p>
-<p>
-	Consequuntur consequatur similique ducimus quidem odit quod quaerat facilis illo ex quas aliquam
-	officia deserunt nisi, soluta quibusdam unde, cumque natus explicabo voluptatem sint debitis ipsa
-	nulla maiores. Officia, fuga.
-</p>
-<p>
-	Ut similique dicta exercitationem cupiditate delectus, laudantium unde ipsam neque harum
-	consequuntur vel sequi tempora placeat numquam non atque temporibus at animi! Enim cupiditate
-	pariatur at in. Nostrum, ad tempora!
-</p>
+<div class="flex flex-col gap-6">
+	<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+		{#each data.projects as project}
+			<Project {...project} />
+		{/each}
+	</div>
+</div>
 
 <style>
 	@import 'tailwindcss';
