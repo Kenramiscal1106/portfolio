@@ -75,7 +75,7 @@
 		@apply border-neutrals-300 rounded-sm border-2 my-4;
 	}
 	div.render-markdown {
-		*:not(svg) {
+		*:not(svg, li) {
 			@apply my-3 leading-normal;
 		}
 		h1,
