@@ -1,9 +1,25 @@
 <script lang="ts">
-	import type { PageData } from './$types';
+	import type { PageData, PageProps } from './$types';
 	import Label from '$lib/components/Label.svelte';
 	import Button from '$lib/components/Button.svelte';
+	import { onMount } from 'svelte';
+	import { fade } from 'svelte/transition';
 
-	export let data: PageData;
+	let { data }: PageProps = $props();
+	let scrollUp = $state(false);
+	function scrollUpHandler() {
+		if (document.documentElement.scrollTop > window.innerHeight / 2) {
+			scrollUp = true;
+			return;
+		}
+		scrollUp = false;
+	}
+	onMount(() => {
+		window.addEventListener('scroll', scrollUpHandler);
+		return () => {
+			window.removeEventListener('scroll', scrollUpHandler);
+		};
+	});
 </script>
 
 <svelte:head>
@@ -93,6 +109,33 @@
 		</Button>
 	</div>
 </div>
+
+{#if scrollUp}
+	<div transition:fade={{ duration: 200 }}>
+		<Button
+			class="fixed right-4 bottom-4 p-3"
+			variant="neutral"
+			iconOnly={true}
+			onclick={() => {
+				document.documentElement.scrollTop = 0;
+			}}
+			><svg
+				width="24"
+				height="25"
+				viewBox="0 0 24 25"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path
+					fill-rule="evenodd"
+					clip-rule="evenodd"
+					d="M11.4697 2.48822C11.7626 2.19533 12.2374 2.19533 12.5303 2.48822L20.0303 9.98822C20.3232 10.2811 20.3232 10.756 20.0303 11.0489C19.7374 11.3418 19.2626 11.3418 18.9697 11.0489L12.75 4.82921V21.0186C12.75 21.4328 12.4142 21.7686 12 21.7686C11.5858 21.7686 11.25 21.4328 11.25 21.0186V4.82921L5.03033 11.0489C4.73744 11.3418 4.26256 11.3418 3.96967 11.0489C3.67678 10.756 3.67678 10.2811 3.96967 9.98822L11.4697 2.48822Z"
+					class="fill-neutrals-100"
+				/>
+			</svg>
+		</Button>
+	</div>
+{/if}
 
 <style>
 	@import '../../../app.css';
