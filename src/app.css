@@ -41,8 +41,8 @@
 }
 
 @font-face {
-	font-famiy: 'Space Grotesk';
-	src: url('fonts/Space-Grotesk.ttf');
+	font-family: 'Space Grotesk';
+	src: url('/fonts/Space-Grotesk.ttf');
 }
 
 @layer base {
