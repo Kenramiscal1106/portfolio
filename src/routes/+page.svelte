@@ -1,8 +1,9 @@
-<script>
-	import { browser } from '$app/environment';
+<script lang="ts">
+	// import { browser } from '$app/environment';
 	import Button from '$lib/components/Button.svelte';
-	import { animate, stagger, svg, text } from 'animejs';
+	import { animate, stagger, svg, text, utils } from 'animejs';
 	import { onMount } from 'svelte';
+	const cssVar = (name: any) => ($el: any) => utils.get($el, name);
 	onMount(() => {
 		const { chars } = text.split('#intromsg', {
 			chars: { wrap: 'clip' }
@@ -10,35 +11,35 @@
 		animate(chars, {
 			// visibility: ['hidden', 	'visible'],
 			opacity: [0, 1],
-			duration: 800,
-			delay: stagger(100, { start: 2000 }),
+			duration: 10,
+			delay: stagger(100, { start: 4000 }),
 			ease: 'outElastic'
-		});
-		animate("[data-animation='fade']", {
-			opacity: [0, 1],
-			duration: 200
 		});
 		animate(svg.createDrawable('#heroDraw'), {
 			draw: ['0 0', '0 1', '1 1'],
 			duration: 4000,
-			delay: 200,
 			ease: 'inOutSine'
 		});
 		animate("[alt='Hero Section']", {
 			opacity: [0, 1],
-			delay: 2200
+			delay: 2000
 		});
-		animate('.content-main > *:not(#intromsg)', {
+		animate('.content-main > *:not(#intromsg, #CTAButton)', {
 			opacity: [0, 1],
 			y: ['-16px', 0],
 			duration: 150,
-			delay: stagger(750, { start: 2000 })
+			delay: stagger(750, { start: 4000 })
 		});
 		animate('#CTAButton', {
 			opacity: [0, 1],
 			scale: ['90%', '100%'],
 			duration: 150,
-			delay: 4250
+			delay: 5000
+		});
+		animate('#hero-container', {
+			backgroundColor: [cssVar('--color-neutrals-200'), cssVar('--color-neutrals-100')],
+			duration: 500,
+			delay: 3000
 		});
 	});
 </script>
@@ -47,15 +48,15 @@
 	<title>KENDAN</title>
 </svelte:head>
 
-<div class="min-h-dvh">
+<div class="min-h-[calc(100dvh-96px)]">
 	<div
-		class="bg-neutrals-100 mx-auto flex w-full max-w-96 flex-col items-center rounded-2xl p-2 opacity-0 sm:p-8"
-		data-animation="fade"
+		id="hero-container"
+		class="mx-auto flex w-full max-w-80 flex-col items-center rounded-2xl p-2 sm:p-8"
 	>
-		<div class=" relative overflow-hidden">
+		<div class=" relative">
 			<img src="HeroImage.png" alt="Hero Section" class="h-auto w-full" />
 			<svg
-				viewBox="0 0 604 544"
+				viewBox="0 0 605 545"
 				fill="none"
 				class="absolute bottom-0 left-0 h-auto w-full"
 				xmlns="http://www.w3.org/2000/svg"
@@ -85,10 +86,8 @@
 					/>
 				</svg>
 			</a>
-			<a
-				href="lorem-ipsum"
-				title="Discord Username"
-				aria-label="Discord Username"
+			<div
+				title="Discord Username:dnrmscl"
 				class="hover:fill-neutrals-600 active:fill-neutrals-800"
 			>
 				<svg width="32" height="24" viewBox="0 0 32 24" xmlns="http://www.w3.org/2000/svg">
@@ -98,7 +97,7 @@
 						/>
 					</g>
 				</svg>
-			</a>
+			</div>
 			<a
 				href="https://github.com/Kenramiscal1106"
 				title="Github"
@@ -197,7 +196,6 @@
 	consequuntur vel sequi tempora placeat numquam non atque temporibus at animi! Enim cupiditate
 	pariatur at in. Nostrum, ad tempora!
 </p>
-<h2>Latest from blog</h2>
 
 <style>
 	@import 'tailwindcss';
