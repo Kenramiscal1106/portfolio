@@ -58,7 +58,7 @@
 		id="hero-container"
 		class="mx-auto flex w-full max-w-80 flex-col items-center rounded-2xl p-2 sm:p-8"
 	>
-		<div class=" relative">
+		<div class="relative">
 			<img src="HeroImage.png" alt="Hero Section" class="h-auto w-full" />
 			<svg
 				viewBox="0 0 605 545"
@@ -165,7 +165,7 @@
 <h2 id="projects-created">Featured works</h2>
 <div class="flex min-h-[50dvh] flex-wrap items-start justify-center gap-6">
 	{#each data.projects as project}
-		<Project {...project} class="basis-full sm:basis-1/4" />
+		<Project {...project} class=" shrink grow basis-96" />
 	{/each}
 </div>
 
