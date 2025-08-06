@@ -76,7 +76,9 @@
 	</div>
 	<div class="content-main mt-4 flex flex-col items-center">
 		<div class="text-center text-lg font-bold opacity-0">Hello there.</div>
-		<h1 class="mb-6 text-center text-5xl font-bold" id="intromsg">I am Ken, a web developer.</h1>
+		<h1 class="mb-6 text-center text-4xl font-bold sm:text-5xl" id="intromsg">
+			I am Ken, a web developer.
+		</h1>
 		<div class="link-set fill-neutrals-500 mb-6 flex items-center justify-center gap-4 opacity-0">
 			<a
 				href="https://facebook.com/dnrmscl"
@@ -160,19 +162,17 @@
 	</div>
 </div>
 
-<h2 id="projects-created">Projects Created</h2>
-<div class="flex flex-col gap-6">
-	<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-		{#each data.projects as project}
-			<Project {...project} />
-		{/each}
-	</div>
+<h2 id="projects-created">Featured works</h2>
+<div class="flex min-h-[50dvh] flex-wrap items-start justify-center gap-6">
+	{#each data.projects as project}
+		<Project {...project} class="basis-full sm:basis-1/4" />
+	{/each}
 </div>
 
 <style>
 	@import 'tailwindcss';
 	h2 {
-		@apply my-4 scroll-m-20 text-center text-2xl font-bold;
+		@apply my-4 scroll-m-4 text-center text-2xl font-bold;
 	}
 	div.link-set svg {
 		@apply transition-all duration-200;
