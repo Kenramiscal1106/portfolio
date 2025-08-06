@@ -15,6 +15,10 @@
 		scrollUp = false;
 	}
 	onMount(() => {
+		const links = document.querySelectorAll<HTMLLinkElement>('div.render-markdown a');
+		links.forEach((link) => {
+			link.setAttribute('target', '_blank');
+		});
 		window.addEventListener('scroll', scrollUpHandler);
 		return () => {
 			window.removeEventListener('scroll', scrollUpHandler);
