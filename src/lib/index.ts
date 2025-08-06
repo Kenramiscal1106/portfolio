@@ -7,3 +7,10 @@ export type Post = {
     imageAlt: string
     slug:string
 }
+export type Project = {
+    title:string,
+    description: string,
+    imageURL:string,
+    imageAlt: string
+    slug:string
+}
