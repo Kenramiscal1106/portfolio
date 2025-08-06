@@ -15,7 +15,7 @@ const config = {
 	// Consult https://svelte.dev/docs/kit/integrations
 	// for more information about preprocessors
 	preprocess: [vitePreprocess(), mdsvex({
-		extensions: [".svx"],
+		extensions: [".svx", ".md"],
 		highlight: {
 			highlighter: async (code, lang = 'text') => {
 			const html = escapeSvelte(highlighter.codeToHtml(code, { lang, theme }));
@@ -27,7 +27,7 @@ const config = {
 	// If your environment is not supported, or you settled on a specific environment, switch out the adapter.
 	// See https://svelte.dev/docs/kit/adapters for more information about adapters.
 	adapter: adapter() },
-	extensions: ['.svelte', '.svx']
+	extensions: ['.svelte', '.svx', '.md']
 };
 
 export default config;
