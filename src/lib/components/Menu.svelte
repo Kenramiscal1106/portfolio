@@ -31,6 +31,7 @@
 			onclick={() => {
 				menu.close();
 			}}
+			iconOnly={true}
 			variant="ghost"
 			class="fill-neutrals-500 hover:fill-neutrals-800 active:fill-neutrals-900"
 			><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -42,13 +43,13 @@
 		<div class="flex flex-col gap-1.5">
 			<MenuLink href="/">Home</MenuLink>
 			<MenuLink href="/blog">Blog</MenuLink>
-			<MenuLink href="/contact">Contact Me</MenuLink>
+			<!-- <MenuLink href="/contact">Contact Me</MenuLink>
 			<Button
 				variant={'neutral'}
 				href="Curriculum Vitae.pdf"
 				target="_blank"
 				download="Curriculum Vitae">Download CV</Button
-			>
+			> -->
 		</div>
 	</aside>
 {/if}

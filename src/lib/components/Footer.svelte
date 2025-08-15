@@ -32,10 +32,11 @@
 	</svg>
 	<div class="flex py-2">
 		<div class="flex flex-1 flex-col gap-3">
-			<a href="/">Home</a><a href="/blog">Blog</a><a href="/contact">Contacts</a><a
+			<a href="/">Home</a><a href="/blog">Blog</a>
+			<!-- <a href="/contact">Contacts</a><a
 				href="/Curriculum Vitae.pdf"
 				download="CV">Download CV</a
-			>
+			> -->
 		</div>
 		<div class="flex flex-1 flex-col gap-3">
 			<div class="flex gap-1"></div>
