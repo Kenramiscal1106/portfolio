@@ -1,5 +1,4 @@
 <script lang="ts">
-	// import { browser } from '$app/environment';
 	import Button from '$lib/components/Button.svelte';
 	import { animate, stagger, svg, text, utils } from 'animejs';
 	import { onMount } from 'svelte';
