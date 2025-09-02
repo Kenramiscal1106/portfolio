@@ -2,6 +2,8 @@
 	import { menu } from '$lib/store.svelte';
 	import { onMount } from 'svelte';
 	import Button from './Button.svelte';
+	import MenuLink from './MenuLink.svelte';
+	import ThemeToggle from './ThemeToggle.svelte';
 	let lastScrollY = $state(0);
 	let visible = $state(true);
 	function scrollVisible() {
@@ -22,12 +24,36 @@
 	<div
 		class="bg-neutrals-100/50 {visible
 			? 'translate-y-0 opacity-100'
-			: '-translate-y-4 opacity-0'} flex items-center justify-between rounded-xl px-6 py-3 backdrop-blur-sm transition-all duration-400 sm:py-4"
+			: '-translate-y-4 opacity-0'} flex items-center justify-between rounded-xl px-6 py-2.5 backdrop-blur-sm transition-all duration-400 sm:py-3"
 	>
 		<div>
 			<a href="/"><img src="/Logo.svg" alt="logo" height="34" width="124" /></a>
 		</div>
-		<div>
+		<div class="hidden items-center gap-3 sm:flex">
+			<MenuLink type="topnav" href="/">Home</MenuLink>
+			<MenuLink type="topnav" href="/blog">Blog</MenuLink>
+			<Button variant="neutral">
+				<svg
+					width="20"
+					height="20"
+					viewBox="0 0 20 20"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M10 1.25C10.3452 1.25 10.625 1.52982 10.625 1.875L10.625 6.25H9.375V1.875C9.375 1.52982 9.65482 1.25 10 1.25Z"
+						fill="#F9FAFA"
+					/>
+					<path
+						d="M9.375 6.25L9.375 10.9911L7.94194 9.55806C7.69786 9.31398 7.30214 9.31398 7.05806 9.55806C6.81398 9.80214 6.81398 10.1979 7.05806 10.4419L9.55806 12.9419C9.67527 13.0592 9.83424 13.125 10 13.125C10.1658 13.125 10.3247 13.0592 10.4419 12.9419L12.9419 10.4419C13.186 10.1979 13.186 9.80214 12.9419 9.55806C12.6979 9.31398 12.3021 9.31398 12.0581 9.55806L10.625 10.9911V6.25H13.75C15.1307 6.25 16.25 7.36929 16.25 8.75V16.25C16.25 17.6307 15.1307 18.75 13.75 18.75H6.25C4.86929 18.75 3.75 17.6307 3.75 16.25V8.75C3.75 7.36929 4.86929 6.25 6.25 6.25H9.375Z"
+						fill="#F9FAFA"
+					/>
+				</svg>
+				Download CV
+			</Button>
+			<ThemeToggle />
+		</div>
+		<div class="sm:hidden">
 			<Button
 				variant="ghost"
 				onclick={() => {
