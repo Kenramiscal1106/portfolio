@@ -35,7 +35,7 @@
 <div class="mb-4 sm:flex sm:flex-col sm:items-center">
 	<h1 class="mb-1 text-2xl font-bold sm:text-4xl">{data.meta.title}</h1>
 	<div class="flex gap-3 text-sm">
-		<Label>
+		<Label class="fill-neutrals-400 text-neutrals-600 stroke-neutrals-400">
 			<svg
 				class="aspect-square h-6"
 				viewBox="0 0 24 24"
@@ -51,7 +51,7 @@
 
 			<span>{data.meta.createdAt}</span>
 		</Label>
-		<Label>
+		<Label class="fill-neutrals-400 text-neutrals-600 stroke-neutrals-400">
 			<svg class="aspect-square h-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
 				<path
 					fill-rule="evenodd"
