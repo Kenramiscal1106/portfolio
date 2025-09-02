@@ -15,6 +15,5 @@ export const load: PageServerLoad = async () => {
 			projects.push(project);
 		}
 	});
-  console.log(projects)
   return {projects}
 };
