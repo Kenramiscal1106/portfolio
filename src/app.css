@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
 @theme {
 	--color-*: initial;
 	--color-neutrals-900: hsl(230, 11%, 11%);
@@ -63,7 +65,7 @@
 	}
 	html,
 	body {
-		@apply bg-neutrals-200 overflow-x-hidden;
+		@apply bg-neutrals-200 overflow-x-hidden /* dark:bg-neutrals-900 */;
 	}
 	html {
 		@apply scroll-smooth;
