@@ -18,18 +18,18 @@
 		</div>
 		<div class="bg-neutrals-100 flex grow flex-col justify-between gap-4 px-5 py-4">
 			<div class="flex flex-col gap-1">
-				<h1
+				<h2
 					class="text-xl font-bold duration-200 active:underline sm:text-2xl sm:active:no-underline lg:text-2xl"
 				>
 					{title}
-				</h1>
+				</h2>
 
 				<p class="line-clamp-3 max-h-[8ch] overflow-hidden text-sm sm:text-base">
 					{description}
 				</p>
 			</div>
 			<div class="flex flex-wrap gap-4 text-sm">
-				<Label>
+				<Label class="fill-neutrals-400 text-neutrals-600 stroke-neutrals-400">
 					<svg
 						class="aspect-square h-6"
 						viewBox="0 0 24 24"
@@ -45,7 +45,7 @@
 
 					<span>{displayDate}</span>
 				</Label>
-				<Label>
+				<Label class="fill-neutrals-400 text-neutrals-600 stroke-neutrals-400">
 					<svg class="aspect-square h-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
 						<path
 							fill-rule="evenodd"
