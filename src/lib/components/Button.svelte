@@ -30,6 +30,7 @@
 {#if href}
 	<a
 		{href}
+		target={href.includes('https://') ? '_blank' : ''}
 		class="flex items-center justify-center gap-2 rounded-lg {iconOnly
 			? 'p-1.5'
 			: 'px-3 py-1.5 sm:py-2'} w-max transition-colors duration-100 {btnclass[
