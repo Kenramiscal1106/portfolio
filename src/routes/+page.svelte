@@ -164,7 +164,7 @@
 <h2 id="projects-created">Featured works</h2>
 <div class="flex min-h-[50dvh] flex-wrap items-start justify-center gap-6">
 	{#each data.projects as project}
-		<Project {...project} class=" shrink grow basis-96" />
+		<Project {...project} class=" basis-96" />
 	{/each}
 </div>
 
