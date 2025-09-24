@@ -15,16 +15,18 @@
 	<div
 		class="flex items-center gap-1 rounded-lg border-2 px-2 py-1 font-bold"
 		style:border-color="hsl({data.hslaData})"
-		style:background-color="hsla({data.hslaData}, 0.3)"
+		style:background-color="hsla({data.hslaData}, 0.2)"
 	>
 		<div>
-			<img src="/technology/{data.iconFilename}" alt="logo" class="aspect-square w-[18px]" />
+			<img src="/images/technology/{data.iconFilename}" alt="logo" class="aspect-square w-[18px]" />
 		</div>
 		{data.name}
 	</div>
 {/snippet}
 
-<div class="bg-neutrals-100 basis-96 rounded-xl px-6 py-8">
+<div
+	class="bg-neutrals-100 anime-skillset basis-80 rounded-xl px-6 py-8 opacity-0 shadow-xl xl:grow"
+>
 	<props.icon />
 	<h3 class="text-xl font-bold">{props.name}</h3>
 	<p>{props.description}</p>

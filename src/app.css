@@ -65,10 +65,13 @@
 	}
 	html,
 	body {
-		@apply bg-neutrals-200 overflow-x-hidden /* dark:bg-neutrals-900 */;
+		@apply bg-neutrals-100 overflow-x-hidden /* dark:bg-neutrals-900 */;
 	}
 	html {
 		@apply scroll-smooth;
+	}
+	body {
+		background: url("/images/bg.png") fixed;
 	}
 	a {
 		outline: none;
@@ -77,6 +80,10 @@
 		@apply border-neutrals-300 rounded-sm border-2 my-4;
 	}
 	div.render-markdown {
+
+		::selection {
+			@apply bg-neutrals-500 text-neutrals-100;
+		}
 		*:not(svg, li) {
 			@apply my-3 leading-normal;
 		}
