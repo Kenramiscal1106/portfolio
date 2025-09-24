@@ -1,0 +1,41 @@
+<script lang="ts">
+	import type { TechMeta } from '$lib';
+	import type { Component, Snippet } from 'svelte';
+
+	interface Props {
+		name: string;
+		description: string;
+		icon: Snippet | Component;
+		techUsed?: TechMeta[];
+	}
+	const props: Props = $props();
+</script>
+
+{#snippet technology(data: TechMeta)}
+	<div
+		class="flex items-center gap-1 rounded-lg border-2 px-2 py-1 font-bold"
+		style:border-color="hsl({data.hslaData})"
+		style:background-color="hsla({data.hslaData}, 0.3)"
+	>
+		<div>
+			<img src="/technology/{data.iconFilename}" alt="logo" class="aspect-square w-[18px]" />
+		</div>
+		{data.name}
+	</div>
+{/snippet}
+
+<div class="bg-neutrals-100 basis-96 rounded-xl px-6 py-8">
+	<props.icon />
+	<h3 class="text-xl font-bold">{props.name}</h3>
+	<p>{props.description}</p>
+	<div class="mt-4 flex flex-col gap-2">
+		<div class="font-bold">Technologies used:</div>
+		{#if props.techUsed}
+			<div class="flex flex-wrap gap-2">
+				{#each props.techUsed as techData}
+					{@render technology(techData)}
+				{/each}
+			</div>
+		{/if}
+	</div>
+</div>
