@@ -4,7 +4,7 @@
 	import { bounceInOut, sineInOut } from 'svelte/easing';
 	import { fade, fly } from 'svelte/transition';
 	import Button from './Button.svelte';
-	import MenuLink from './MenuLink.svelte';
+	import MenuLink from './NavLink.svelte';
 	onNavigate(({ to, from }) => {
 		if (to?.route.id !== from?.route.id) {
 			menu.close();

@@ -12,5 +12,11 @@ export type Project = {
 	description: string;
 	imageAlt: string;
 	slug: string;
-    link: string;
+	link: string;
 };
+
+export type TechMeta = {
+	name: string;
+	iconFilename: string;
+	hslaData: string;
+}

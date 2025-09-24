@@ -1,24 +1,35 @@
-<script lang="ts">
-	import { page } from '$app/state';
+<!-- <script lang="ts">
 	import type { Snippet } from 'svelte';
+	import type { MouseEventHandler } from 'svelte/elements';
+
 	interface Props {
 		children: Snippet;
-		href: string;
-		type?: 'drawer' | 'topnav';
+		variant?: 'primary' | 'neutral' | 'ghost' | 'outline';
+		onclick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
+		href?: string;
+		class?: string;
+		[key: string]: any;
+		iconOnly?: boolean;
 	}
-	const { children, href, type = 'drawer' }: Props = $props();
-	const route = $derived(page.route.id);
+	const {
+		children,
+		variant = 'primary',
+		onclick,
+		href,
+		class: className,
+		iconOnly = false,
+		...props
+	}: Props = $props();
+	// {btnclass[variant]}
 </script>
 
 <a
-	class="{type === 'drawer'
-		? ' hover:bg-neutrals-300/30 rounded-xl py-2 transition-colors duration-100'
-		: 'text-neutrals-500 hover:text-neutrals-800 p-2 text-lg'} {route === href
-		? type === 'drawer'
-			? 'bg-neutrals-300/30 text-neutrals-900 font-bold'
-			: 'text-neutrals-900 hover:text-neutrals-900 font-bold'
-		: ''} transition-colors duration-150"
 	{href}
+	class="flex items-center justify-center gap-2 rounded-lg {iconOnly
+		? 'p-1.5'
+		: 'px-3 py-1.5'} transition-colors duration-100 {className ?? ''}"
+	{onclick}
+	{...props}
 >
 	{@render children()}
-</a>
+</a> -->

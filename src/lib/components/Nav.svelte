@@ -2,8 +2,9 @@
 	import { menu } from '$lib/store.svelte';
 	import { onMount } from 'svelte';
 	import Button from './Button.svelte';
-	import MenuLink from './MenuLink.svelte';
+	import MenuLink from './NavLink.svelte';
 	import ThemeToggle from './ThemeToggle.svelte';
+	import NavLink from './NavLink.svelte';
 	let lastScrollY = $state(0);
 	let visible = $state(true);
 	function scrollVisible() {
@@ -22,7 +23,7 @@
 
 <nav class="fixed top-2 left-1/2 z-20 w-full max-w-5xl -translate-x-1/2 px-3">
 	<div
-		class="bg-neutrals-100/50 {visible
+		class="bg-neutrals-100 {visible
 			? 'translate-y-0 opacity-100'
 			: '-translate-y-4 opacity-0'} flex items-center justify-between rounded-xl px-6 py-2.5 backdrop-blur-sm transition-all duration-400 sm:py-3"
 	>
@@ -30,8 +31,8 @@
 			<a href="/"><img src="/Logo.svg" alt="logo" height="34" width="124" /></a>
 		</div>
 		<div class="hidden items-center gap-3 sm:flex">
-			<MenuLink type="topnav" href="/">Home</MenuLink>
-			<MenuLink type="topnav" href="/blog">Blog</MenuLink>
+			<NavLink type="topnav" href="/">Home</NavLink>
+			<NavLink type="topnav" href="/blog">Blog</NavLink>
 			<Button variant="neutral">
 				<svg
 					width="20"
