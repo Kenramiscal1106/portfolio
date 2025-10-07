@@ -2,6 +2,7 @@
 	import type { Project } from '$lib';
 	import ArrowUpLeftIcon from '$lib/icons/ArrowUpLeftIcon.svelte';
 	import Button from './Button.svelte';
+	import { project } from '$lib/store.svelte';
 	type Props = Project & { class: string };
 	const { title, description, imageAlt, slug, class: className, link }: Props = $props();
 </script>
@@ -23,7 +24,9 @@
 			</p>
 			<div class="flex gap-2">
 				<Button href={link} variant="neutral">Visit Site <ArrowUpLeftIcon /></Button>
-				<Button href="/project/{slug}" variant="outline">Read More</Button>
+				<Button variant="outline" onclick={() => {
+					project.open(slug)
+				}}>Read More</Button>
 			</div>
 		</div>
 	</div>
