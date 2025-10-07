@@ -2,7 +2,7 @@
 	import { menu } from '$lib/store.svelte';
 	import { onMount } from 'svelte';
 	import Button from './Button.svelte';
-	import MenuLink from './NavLink.svelte';
+	// import MenuLink from './NavLink.svelte';
 	import ThemeToggle from './ThemeToggle.svelte';
 	import NavLink from './NavLink.svelte';
 	let lastScrollY = $state(0);
@@ -21,11 +21,13 @@
 	});
 </script>
 
-<nav class="fixed top-2 left-1/2 z-20 w-full max-w-5xl -translate-x-1/2 px-3">
+<nav
+	class="sm:bg-neutrals-100 fixed top-3 left-1/2 z-20 w-full max-w-5xl -translate-x-1/2 px-3 shadow-none sm:top-0 sm:w-full sm:max-w-none sm:shadow-lg md:top-0 md:px-0"
+>
 	<div
 		class="bg-neutrals-100 {visible
 			? 'translate-y-0 opacity-100'
-			: '-translate-y-4 opacity-0'} flex items-center justify-between rounded-xl px-6 py-2.5 backdrop-blur-sm transition-all duration-400 sm:py-3"
+			: '-translate-y-4 opacity-0 sm:translate-y-0 sm:opacity-100'} mx-auto flex items-center justify-between rounded-xl px-6 py-2.5 shadow-xl backdrop-blur-sm transition-all duration-400 sm:max-w-5xl sm:rounded-none sm:py-3 sm:shadow-none sm:drop-shadow-none"
 	>
 		<div>
 			<a href="/"><img src="/Logo.svg" alt="logo" height="34" width="124" /></a>

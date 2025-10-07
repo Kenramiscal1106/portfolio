@@ -20,7 +20,6 @@
 			chars: { wrap: 'visible' }
 		});
 		const textAnimate = animate(chars, {
-			// visibility: ['hidden', 	'visible'],
 			opacity: [0, 1],
 			duration: 100,
 			delay: stagger(50),
@@ -49,12 +48,6 @@
 				duration: 150
 			})
 			.sync(textAnimate)
-			.add(chars, {
-				y: [0, '-16px', 0],
-				duration: 200,
-				delay: stagger(50),
-				ease: 'inOutSine'
-			})
 			.add('.link-set', {
 				opacity: [0, 1],
 				y: ['-16px', 0],
@@ -102,7 +95,7 @@
 		<div class="flex flex-col items-center gap-12 lg:flex-row lg:justify-center">
 			<div
 				id="hero-container"
-				class="mx-auto flex w-full max-w-80 flex-col items-center rounded-2xl p-2 sm:p-8 lg:mx-0"
+				class="mx-auto flex w-full max-w-72 flex-col items-center rounded-2xl p-8 shadow-lg sm:max-w-80 lg:mx-0"
 			>
 				<div class="relative">
 					<img src="HeroImage.png" alt="Hero Section" class="h-auto w-full opacity-0" />
@@ -178,12 +171,12 @@
 			</div>
 		</div>
 	</div>
-	<div class="flex min-h-[75dvh] items-center" id="projects-created">
+	<div class="flex min-h-[75dvh] items-center">
 		<div>
-			<h2>Featured works</h2>
+			<h2 id="projects-created">Featured works</h2>
 			<div class="flex min-h-[50dvh] flex-wrap items-start justify-center gap-6">
 				{#each data.projects as project}
-					<Project {...project} class="grow basis-80" />
+					<Project {...project} class="basis-80" />
 				{/each}
 			</div>
 		</div>
@@ -223,10 +216,10 @@
 	</div>
 </div>
 
-<style>
-	@import 'tailwindcss';
+<style lang="postcss">
+	@reference 'tailwindcss';
 	h2 {
-		@apply my-4 scroll-m-4 text-center text-2xl font-bold;
+		@apply my-4 scroll-m-12 text-center text-2xl font-bold;
 	}
 	div.link-set svg {
 		@apply transition-all duration-200;

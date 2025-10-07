@@ -11,7 +11,7 @@
 
 <a href="/blog/{slug}">
 	<article
-		class="hover:ring-primary-600 flex h-full flex-col overflow-hidden rounded-xl transition-all duration-150 hover:ring-2"
+		class="hover:ring-primary-600 flex h-full flex-col overflow-hidden rounded-xl shadow-xl drop-shadow-lg transition-all duration-150 hover:ring-2"
 	>
 		<div class="from-neutrals-600 to-neutrals-300 bg-gradient-to-b">
 			<img src={imageURL} alt={imageAlt} class="aspect-video w-full" />
