@@ -4,7 +4,7 @@
 	const btnclass = {
 		primary: 'text-neutrals-100 scale-95 bg-primary-700',
 		neutral: 'bg-neutrals-900 text-neutrals-100 active:scale-95',
-		outline: 'border-neutrals-300 border-2 hover:border-neutrals-400',
+		outline: 'border-neutrals-200 border-2 hover:border-neutrals-300 active:bg-neutrals-200 active:border-transparent',
 		ghost: 'hover:bg-neutrals-200 active:bg-neutrals-300'
 	};
 	interface Props {

@@ -84,7 +84,7 @@
 		::selection {
 			@apply bg-neutrals-500 text-neutrals-100;
 		}
-		*:not(svg, li) {
+		*:not(svg, li, code) {
 			@apply my-3 leading-normal;
 		}
 		h1,
@@ -120,8 +120,8 @@
 		ol {
 			@apply list-outside list-decimal;
 		}
-		code {
-			@apply font-mono text-sm whitespace-pre-wrap;
+		code:not(pre > code) {
+			@apply font-mono text-sm whitespace-pre-wrap inline-block bg-neutrals-200 py-0.5 px-1 rounded-sm ;
 		}
 		pre {
 			@apply rounded-xl p-5;
@@ -129,10 +129,10 @@
 
 		table {
 			* {
-				@apply border-neutrals-400 border p-2;
+				@apply border-neutrals-300 border p-2;
 			}
 			th {
-				@apply bg-neutrals-300;
+				@apply bg-neutrals-200;
 			}
 		}
 		a {
