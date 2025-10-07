@@ -140,7 +140,3 @@
 		</Button>
 	</div>
 {/if}
-
-<style>
-	@import '../../../app.css';
-</style>

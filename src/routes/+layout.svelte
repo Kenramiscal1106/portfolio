@@ -22,7 +22,7 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" href={`/favicon-light.png`} />
+	<link rel="icon" href="/favicon-light.png" />
 </svelte:head>
 
 <Header />
