@@ -1,19 +1,21 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
-	import { animate, createTimeline, onScroll, stagger, svg, text, utils } from 'animejs';
+	import { animate, createTimeline, type DOMTargetSelector, onScroll, stagger, svg, text, utils } from 'animejs';
 	import { onMount } from 'svelte';
 	import type { PageData } from './$types';
 	import Project from '$lib/components/Project.svelte';
 	import DownIcon from '$lib/icons/DownIcon.svelte';
-	import Skillset from '$lib/components/Skillset.svelte';
+	import SkillSet from '$lib/components/SkillSet.svelte';
 	import DevelopIcon from '$lib/icons/DevelopIcon.svelte';
 	import DesignIcon from '$lib/icons/DesignIcon.svelte';
 	import GithubIcon from '$lib/icons/socials/GithubIcon.svelte';
 	import LinkedinIcon from '$lib/icons/socials/LinkedinIcon.svelte';
 	import DiscordIcon from '$lib/icons/socials/DiscordIcon.svelte';
+	import { project } from '$lib/store.svelte';
+	import ViewProject from '$lib/components/ViewProject.svelte';
 	// import ShowProject from '$lib/components/ShowProject.svelte';
 
-	const cssVar = (name: any) => ($el: any) => utils.get($el, name);
+	const cssVar = (name: string) => ($el: DOMTargetSelector) => utils.get($el, name);
 	onMount(() => {
 		const timeline = createTimeline();
 		const { chars } = text.split('#intromsg', {
@@ -36,7 +38,7 @@
 				ease: 'inOutSine'
 			})
 			.add(
-				"[alt='Hero Section']",
+				'[alt=\'Hero Section\']',
 				{
 					opacity: [0, 1]
 				},
@@ -84,7 +86,17 @@
 		});
 	});
 
-	export let data: PageData;
+	const {data} = $props();
+
+	$effect(() => {
+		if (project.isOpen) {
+			document.documentElement.classList.add("overflow-y-hidden")
+		} else {
+			document.documentElement.classList.remove("overflow-y-hidden")
+		}
+	})
+
+
 </script>
 
 <svelte:head>
@@ -118,19 +130,6 @@
 				I am Ken, a web developer.
 			</h1>
 			<div class="link-set text-neutrals-500 mb-6 flex items-center justify-center gap-4 opacity-0">
-				<!-- <a
-						href="https://facebook.com/dnrmscl"
-						title="Facebook"
-						target="_blank"
-						aria-label="Facebook Link"
-						class="hover:fill-neutrals-600 active:fill-neutrals-800"
-					>
-						<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-							<path
-								d="M32 16.0588C32 7.18979 24.8365 1.90735e-06 16 1.90735e-06C7.16346 1.90735e-06 0 7.18979 0 16.0588C0 23.5901 5.16576 29.9093 12.1348 31.6447V20.9661H8.83546V16.0588H12.1348V13.9442C12.1348 8.47834 14.5993 5.94491 19.9459 5.94491C20.9595 5.94491 22.7085 6.14436 23.4241 6.34387V10.7924C23.0464 10.7525 22.3905 10.7326 21.5756 10.7326C18.9521 10.7326 17.9384 11.73 17.9384 14.3233V16.0588H23.1645L22.2668 20.9661H17.9384V32C25.8607 31.0396 32 24.2692 32 16.0588Z"
-							/>
-						</svg>
-					</a> -->
 				<div
 					title="Discord Username:dnrmscl"
 					class="hover:text-neutrals-600 active:text-neutrals-800"
@@ -152,7 +151,8 @@
 					aria-label="LinkedIn Profile"
 					target="_blank"
 					class="hover:text-neutrals-600 active:text-neutrals-800"
-					><LinkedinIcon />
+				>
+					<LinkedinIcon />
 				</a>
 			</div>
 
@@ -163,14 +163,15 @@
 				href="#projects-created"
 			>
 				<DownIcon />
-				See Projects</Button
+				See Projects
+			</Button
 			>
 		</div>
 	</div>
 </div>
-<div class="section-container">
+<div class="section-container" id="projects-created">
 	<div>
-		<h2 id="projects-created">Featured works</h2>
+		<h2>Featured works</h2>
 		<div class="flex flex-wrap justify-center gap-6">
 			{#each data.projects as project}
 				<Project {...project} class="basis-80" />
@@ -178,13 +179,13 @@
 		</div>
 	</div>
 </div>
-<div class="section-container">
+<div class="section-container" id="skill-set">
 	<div>
-		<h2 id="skillset">Skillset</h2>
+		<h2>Skills</h2>
 		<div class="flex flex-wrap justify-center gap-5">
-			<Skillset
-				name={'Developing Websites'}
-				description={'Scaling from personal websites to enterprise/institution websites'}
+			<SkillSet
+				name="Developing Websites"
+				description="Scaling from personal websites to enterprise/institution websites"
 				icon={DevelopIcon}
 				techUsed={[
 					{ name: 'Svelte', iconFilename: 'svelte.png', hslaData: '15, 100%, 50%' },
@@ -193,15 +194,15 @@
 					{ name: 'MongoDB', iconFilename: 'mongoDB.png', hslaData: '198, 100%, 8%' }
 				]}
 			/>
-			<Skillset
-				name={'Web Design'}
-				description={'From Dashboard-style applications, to simple portfolios and static webpages'}
+			<SkillSet
+				name="Web Design"
+				description="From Dashboard-style applications, to simple portfolios and static webpages"
 				icon={DesignIcon}
 				techUsed={[{ name: 'Figma', iconFilename: 'figma.png', hslaData: '0, 0%, 60%' }]}
 			/>
-			<Skillset
-				name={'Backend Design'}
-				description={'Building APIs and connecting content to website'}
+			<SkillSet
+				name="Backend Design"
+				description="Building APIs and connecting content to website"
 				icon={DevelopIcon}
 				techUsed={[
 					{ name: 'Sanity', iconFilename: 'sanity.png', hslaData: '5, 86%, 58%' },
@@ -220,7 +221,8 @@
 					href="https://www.facebook.com/share/p/171YTqPAy5/"
 					class="text-primary-600 inline-flex items-center gap-1 underline"
 					target="_blank"
-					>Byte Forward Hackathon<svg
+				>Byte Forward Hackathon
+					<svg
 						width="20"
 						height="20"
 						viewBox="0 0 20 20"
@@ -256,15 +258,19 @@
 	</div>
 </div>
 
+{#if project.isOpen}
+	<ViewProject />
+{/if}
 <style lang="postcss">
-	@reference 'tailwindcss';
-	h2 {
-		@apply my-4 scroll-m-12 text-center text-2xl font-bold;
-	}
-	/* div.link-set svg {
-		@apply transition-all duration-200;
-	} */
-	.section-container {
-		@apply flex min-h-[75dvh] items-center justify-center py-6;
-	}
+    @reference 'tailwindcss';
+    h2 {
+        @apply my-4 text-center text-2xl font-bold;
+    }
+
+    /* div.link-set svg {
+			@apply transition-all duration-200;
+		} */
+    .section-container {
+        @apply flex min-h-[75dvh] items-center justify-center py-6 scroll-mt-12;
+    }
 </style>
