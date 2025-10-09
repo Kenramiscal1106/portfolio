@@ -16,7 +16,9 @@
 		<div class="from-neutrals-600 to-neutrals-300 bg-gradient-to-b">
 			<img src={imageURL} alt={imageAlt} class="aspect-video w-full" />
 		</div>
-		<div class="bg-neutrals-100 flex grow flex-col justify-between gap-4 px-5 py-4">
+		<div
+			class="dark:bg-neutrals-800 bg-neutrals-100 flex grow flex-col justify-between gap-4 px-5 py-4"
+		>
 			<div class="flex flex-col gap-1">
 				<h2
 					class="text-xl font-bold duration-200 active:underline sm:text-2xl sm:active:no-underline lg:text-2xl"

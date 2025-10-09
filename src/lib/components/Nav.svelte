@@ -5,6 +5,7 @@
 	// import MenuLink from './NavLink.svelte';
 	import ThemeToggle from './ThemeToggle.svelte';
 	import NavLink from './NavLink.svelte';
+	import Logo from './Logo.svelte';
 	let lastScrollY = $state(0);
 	let visible = $state(true);
 	function scrollVisible() {
@@ -22,20 +23,22 @@
 </script>
 
 <nav
-	class="sm:bg-neutrals-100 fixed top-3 left-1/2 z-20 w-full max-w-5xl -translate-x-1/2 px-3 shadow-none sm:top-0 sm:w-full sm:max-w-none sm:shadow-lg md:top-0 md:px-0"
+	class="sm:bg-neutrals-100 dark:sm:bg-neutrals-800 fixed top-3 left-1/2 z-20 w-full max-w-5xl -translate-x-1/2 px-3 shadow-none sm:top-0 sm:w-full sm:max-w-none sm:shadow-lg md:top-0 md:px-0"
 >
 	<div
-		class="bg-neutrals-100 {visible
+		class="bg-neutrals-100 dark:bg-neutrals-800 sm:bg-transparent dark:sm:bg-transparent {visible
 			? 'translate-y-0 opacity-100'
 			: '-translate-y-4 opacity-0 sm:translate-y-0 sm:opacity-100'} mx-auto flex items-center justify-between rounded-xl px-6 py-2.5 shadow-xl backdrop-blur-sm transition-all duration-400 sm:max-w-5xl sm:rounded-none sm:py-3 sm:shadow-none sm:drop-shadow-none"
 	>
-		<div>
-			<a href="/"><img src="/Logo.svg" alt="logo" height="34" width="124" /></a>
+		<div class="">
+			<a href="/">
+				<Logo />
+			</a>
 		</div>
 		<div class="hidden items-center gap-3 sm:flex">
-			<NavLink type="topnav" href="/">Home</NavLink>
-			<NavLink type="topnav" href="/blog">Blog</NavLink>
-			<Button variant="neutral">
+			<NavLink href="/">Home</NavLink>
+			<NavLink href="/blog">Blog</NavLink>
+			<Button variant="neutral" class="dark:bg-primary-600 ">
 				<svg
 					width="20"
 					height="20"

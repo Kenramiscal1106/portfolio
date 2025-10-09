@@ -1,4 +1,4 @@
-<footer class="bg-neutrals-900 text-neutrals-400 mt-8 px-4 py-6">
+<footer class="bg-neutrals-900 dark:bg-neutrals-800 text-neutrals-300 mt-8 px-4 py-6">
 	<div class="mx-auto flex max-w-6xl flex-col gap-3">
 		<svg
 			width="243"

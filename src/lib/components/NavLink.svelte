@@ -11,13 +11,9 @@
 </script>
 
 <a
-	class="{type === 'drawer'
-		? ' hover:bg-neutrals-300/30 rounded-xl py-2 transition-colors duration-100'
-		: 'text-neutrals-700 hover:text-neutrals-800 p-2 text-lg'} {route === href
-		? type === 'drawer'
-			? 'bg-neutrals-300/30 text-neutrals-900 font-bold'
-			: 'text-neutrals-900 hover:text-neutrals-900 font-bold'
-		: ''} transition-colors duration-150"
+	class=" p-2 text-lg {route === href
+		? 'text-neutrals-900 dark:text-neutrals-300 dark:hover:text-neutrals-300 hover:text-neutrals-900 font-bold'
+		: 'text-neutrals-700 dark:text-neutrals-500 dark:hover:text-neutrals-600 hover:text-neutrals-800'} transition-colors duration-150"
 	{href}
 >
 	{@render children()}
