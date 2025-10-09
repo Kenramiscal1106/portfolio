@@ -1,6 +1,15 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
-	import { animate, createTimeline, type DOMTargetSelector, onScroll, stagger, svg, text, utils } from 'animejs';
+	import {
+		animate,
+		createTimeline,
+		type DOMTargetSelector,
+		onScroll,
+		stagger,
+		svg,
+		text,
+		utils
+	} from 'animejs';
 	import { onMount } from 'svelte';
 	import type { PageData } from './$types';
 	import Project from '$lib/components/Project.svelte';
@@ -16,8 +25,15 @@
 	// import ShowProject from '$lib/components/ShowProject.svelte';
 
 	const cssVar = (name: string) => ($el: DOMTargetSelector) => utils.get($el, name);
+	let animating = $state(true);
 	onMount(() => {
-		const timeline = createTimeline();
+		window.scrollTo({
+			top: 0,
+			behavior: 'instant'
+		});
+		const timeline = createTimeline({
+			onComplete: () => (animating = false)
+		});
 		const { chars } = text.split('#intromsg', {
 			chars: { wrap: 'visible' }
 		});
@@ -38,7 +54,7 @@
 				ease: 'inOutSine'
 			})
 			.add(
-				'[alt=\'Hero Section\']',
+				"[alt='Hero Section']",
 				{
 					opacity: [0, 1]
 				},
@@ -86,17 +102,15 @@
 		});
 	});
 
-	const {data} = $props();
+	const { data } = $props();
 
 	$effect(() => {
-		if (project.isOpen) {
-			document.documentElement.classList.add("overflow-y-hidden")
+		if (project.isOpen || animating) {
+			document.documentElement.classList.add('overflow-y-hidden');
 		} else {
-			document.documentElement.classList.remove("overflow-y-hidden")
+			document.documentElement.classList.remove('overflow-y-hidden');
 		}
-	})
-
-
+	});
 </script>
 
 <svelte:head>
@@ -164,8 +178,7 @@
 			>
 				<DownIcon />
 				See Projects
-			</Button
-			>
+			</Button>
 		</div>
 	</div>
 </div>
@@ -221,7 +234,7 @@
 					href="https://www.facebook.com/share/p/171YTqPAy5/"
 					class="text-primary-600 inline-flex items-center gap-1 underline"
 					target="_blank"
-				>Byte Forward Hackathon
+					>Byte Forward Hackathon
 					<svg
 						width="20"
 						height="20"
@@ -261,16 +274,17 @@
 {#if project.isOpen}
 	<ViewProject />
 {/if}
-<style lang="postcss">
-    @reference 'tailwindcss';
-    h2 {
-        @apply my-4 text-center text-2xl font-bold;
-    }
 
-    /* div.link-set svg {
+<style lang="postcss">
+	@reference 'tailwindcss';
+	h2 {
+		@apply my-4 text-center text-2xl font-bold;
+	}
+
+	/* div.link-set svg {
 			@apply transition-all duration-200;
 		} */
-    .section-container {
-        @apply flex min-h-[75dvh] items-center justify-center py-6 scroll-mt-12;
-    }
+	.section-container {
+		@apply flex min-h-[75dvh] scroll-mt-12 items-center justify-center py-6;
+	}
 </style>
