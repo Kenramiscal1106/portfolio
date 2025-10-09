@@ -110,6 +110,9 @@
 		} else {
 			document.documentElement.classList.remove('overflow-y-hidden');
 		}
+		return () => {
+			document.documentElement.classList.remove('overflow-y-hidden');
+		};
 	});
 </script>
 
