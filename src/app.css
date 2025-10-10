@@ -73,6 +73,9 @@
 	body:not(html[data-theme="dark"] > body) {
 		background: url("/images/bg.png") fixed;
 	}
+	body {
+		background: url("/images/bg-dark.png") fixed;
+	}
 	a {
 		outline: none;
 	}
