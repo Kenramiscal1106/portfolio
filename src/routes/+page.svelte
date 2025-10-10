@@ -27,7 +27,7 @@
 	onMount(() => {
 		window.scrollTo({
 			top: 0,
-			behavior: 'smooth'
+			behavior: 'instant'
 		});
 		const landingTimeline = createTimeline({
 			onComplete: () => (animating = false)
@@ -108,6 +108,12 @@
 		} else {
 			document.documentElement.classList.remove('overflow-y-hidden');
 		}
+<<<<<<< HEAD
+=======
+		return () => {
+			document.documentElement.classList.remove('overflow-y-hidden');
+		};
+>>>>>>> main
 	});
 </script>
 
