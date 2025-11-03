@@ -31,7 +31,9 @@
 				</p>
 			</div>
 			<div class="flex flex-wrap gap-4 text-sm">
-				<Label class="fill-neutrals-400 text-neutrals-600 stroke-neutrals-400">
+				<Label
+					class="fill-neutrals-400 text-neutrals-600 dark:text-neutrals-400 stroke-neutrals-400"
+				>
 					<svg
 						class="aspect-square h-6"
 						viewBox="0 0 24 24"
@@ -47,7 +49,9 @@
 
 					<span>{displayDate}</span>
 				</Label>
-				<Label class="fill-neutrals-400 text-neutrals-600 stroke-neutrals-400">
+				<Label
+					class="fill-neutrals-400 text-neutrals-600 dark:text-neutrals-400 stroke-neutrals-400"
+				>
 					<svg class="aspect-square h-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
 						<path
 							fill-rule="evenodd"

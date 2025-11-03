@@ -29,9 +29,6 @@
 			top: 0,
 			behavior: 'instant'
 		});
-		const landingTimeline = createTimeline({
-			onComplete: () => (animating = false)
-		});
 		const { chars } = text.split('#intromsg', {
 			chars: { wrap: 'visible' }
 		});
@@ -41,7 +38,9 @@
 			delay: stagger(50),
 			ease: 'inOut'
 		});
-		landingTimeline
+		createTimeline({
+			onComplete: () => (animating = false)
+		})
 			.add('#hero-container', {
 				opacity: [0.5, 1],
 				duration: 500
@@ -79,42 +78,51 @@
 				'-=150'
 			);
 
-		// timeline.onComplete();
-		// const skillsetTimline = createTimeline({
-		// 	autoplay: onScroll({
-		// 		container: 'body',
-		// 		enter: '90% bottom'
-		// 	}),
-		// 	defaults: {
-		// 		duration: 250
-		// 	}
-		// })
-		// 	.add('#skill-set', {
-		// 		opacity: [0, 1],
-		// 		scale: [0.9, 1]
-		// 	})
-		// 	.add('.anime-skillset', {
-		// 		opacity: [0, 1],
-		// 		scale: [0.9, 1],
-		// 		delay: stagger(250)
-		// 	});
+		createTimeline({
+			autoplay: onScroll({
+				container: 'body',
+				enter: '25% top',
+				target: '.skill-set-container'
+			}),
+			defaults: {
+				duration: 250
+			}
+		}).add(['#skill-set h2', '.anime-skillset > *'], {
+			opacity: [0, 1],
+			scale: [0.9, 1],
+			delay: stagger(250)
+		});
+
+		createTimeline({
+			autoplay: onScroll({
+				container: 'body',
+				enter: '25% top',
+				target: '#projects-created'
+			}),
+			defaults: {
+				duration: 250
+			}
+		}).add(['#projects-created h2', '.anime-projects > *'], {
+			opacity: [0, 1],
+			scale: [0.9, 1],
+			delay: stagger(250)
+		});
+
+		// const projectTimeline = createTimeline({})
 	});
 
 	const { data } = $props();
 
-	$effect(() => {
-		if (project.isOpen || animating) {
-			document.documentElement.classList.add('overflow-y-hidden');
-		} else {
-			document.documentElement.classList.remove('overflow-y-hidden');
-		}
-<<<<<<< HEAD
-=======
-		return () => {
-			document.documentElement.classList.remove('overflow-y-hidden');
-		};
->>>>>>> main
-	});
+	// $effect(() => {
+	// 	if (project.isOpen || animating) {
+	// 		document.documentElement.classList.add('overflow-y-hidden');
+	// 	} else {
+	// 		document.documentElement.classList.remove('overflow-y-hidden');
+	// 	}
+	// 	return () => {
+	// 		document.documentElement.classList.remove('overflow-y-hidden');
+	// 	};
+	// });
 </script>
 
 <svelte:head>
@@ -189,7 +197,7 @@
 <div class="section-container" id="projects-created">
 	<div>
 		<h2>Featured works</h2>
-		<div class="flex flex-wrap justify-center gap-6">
+		<div class="anime-projects flex flex-wrap justify-center gap-6">
 			{#each data.projects as project}
 				<Project {...project} class="basis-80" />
 			{/each}
@@ -197,9 +205,9 @@
 	</div>
 </div>
 <div class="section-container" id="skill-set">
-	<div>
-		<h2>Skills</h2>
-		<div class="flex flex-wrap justify-center gap-5">
+	<div class="skill-set-container">
+		<h2 class="opacity-0">Skills</h2>
+		<div class="anime-skillset flex flex-wrap justify-center gap-5">
 			<SkillSet
 				name="Developing Websites"
 				description="Scaling from personal websites to enterprise/institution websites"
@@ -232,11 +240,13 @@
 <div class="section-container">
 	<div>
 		<h2 id="events-participated">Events Participated</h2>
-		<div class="bg-neutrals-100 space-y-3 rounded-xl p-5 shadow-lg drop-shadow-lg">
+		<div
+			class="bg-neutrals-100 dark:bg-neutrals-800 space-y-3 rounded-xl p-5 shadow-lg drop-shadow-lg"
+		>
 			<h3 class="text-center text-xl font-bold">
 				<a
 					href="https://www.facebook.com/share/p/171YTqPAy5/"
-					class="text-primary-600 inline-flex items-center gap-1 underline"
+					class="text-primary-600 dark:text-primary-400 inline-flex items-center gap-1 underline"
 					target="_blank"
 					>Byte Forward Hackathon
 					<svg
@@ -255,19 +265,19 @@
 					</svg>
 				</a>
 			</h3>
-			<div class="flex gap-3">
+			<div class="flex flex-wrap gap-3">
 				<div>
 					<img
 						src="images/hackathon/stolen.jpg"
 						alt="Product planning and Researching"
-						class="h-65 w-auto rounded-lg"
+						class="max-h-65 w-auto rounded-lg"
 					/>
 				</div>
 				<div>
 					<img
 						src="images/hackathon/stage.jpg"
 						alt="Stage Presentation for product"
-						class="h-65 w-auto rounded-lg"
+						class="max-h-65 w-auto rounded-lg"
 					/>
 				</div>
 			</div>

@@ -25,7 +25,7 @@
 {/snippet}
 
 <div
-	class="bg-neutrals-100 dark:bg-neutrals-800 anime-skillset basis-80 rounded-xl px-6 py-8 opacity-100 shadow-xl xl:grow"
+	class="bg-neutrals-100 dark:bg-neutrals-800 grow basis-80 rounded-xl px-6 py-8 opacity-0 shadow-xl xl:grow-0"
 >
 	<props.icon />
 	<h3 class="mt-3 text-2xl font-bold">{props.name}</h3>

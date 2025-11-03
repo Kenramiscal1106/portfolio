@@ -16,7 +16,7 @@
 >
 	<div class="bg-neutrals-900 absolute top-0 left-0 h-full w-full opacity-50"></div>
 	<div class="z-10 flex flex-col gap-2">
-		<div class="text-neutrals-300">Featured Article</div>
+		<div class="text-neutrals-300 text-xl font-bold">Featured Article</div>
 		<h1 class="text-neutrals-100 text-4xl font-bold">{title}</h1>
 		<div class=" flex flex-wrap gap-4 text-sm">
 			<Label class="fill-neutrals-300 text-neutrals-300 stroke-neutrals-300">

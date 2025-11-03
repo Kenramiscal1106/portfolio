@@ -57,7 +57,7 @@
 				</svg>
 				Download CV
 			</Button>
-			<!-- <ThemeToggle /> -->
+			<ThemeToggle />
 		</div>
 		<div class="sm:hidden">
 			<Button

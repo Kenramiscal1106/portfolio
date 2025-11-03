@@ -8,7 +8,7 @@
 </script>
 
 <article
-	class="bg-neutrals-100 dark:bg-neutrals-800 flex h-full flex-col rounded-xl p-4 transition-all duration-150 {className} shadow-xl"
+	class="bg-neutrals-100 dark:bg-neutrals-800 flex h-full flex-col rounded-xl p-4 opacity-0 transition-all duration-150 {className} shadow-xl"
 >
 	<div
 		class="from-neutrals-600 to-neutrals-300 relative overflow-hidden rounded-sm bg-gradient-to-b"

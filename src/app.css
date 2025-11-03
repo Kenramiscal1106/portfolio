@@ -88,7 +88,7 @@
 			@apply bg-neutrals-500 text-neutrals-100;
 		}
 		*:not(svg, li, code) {
-			@apply my-3 leading-normal;
+			@apply my-3 leading-normal text-justify;
 		}
 		h1,
 		h2,
