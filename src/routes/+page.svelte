@@ -135,6 +135,14 @@
 	<meta property="og:title" content="Ken Daniele Ramiscal" />
 	<meta property="og:url" content="https://kendan.dev" />
 	<meta property="og:image" content="https://kendan.dev/og/homepage.png" />
+	<meta
+		property="og:description"
+		content="A web developer and designer currently taking up Computer Science degree program"
+	/>
+	<meta
+		property="twitter:description"
+		content="A web developer and designer currently taking up Computer Science degree program"
+	/>
 </svelte:head>
 <div class="min-h-[calc(100dvh-96px)] pt-12">
 	<div class="flex flex-col items-center gap-12 lg:flex-row lg:justify-center">
