@@ -132,6 +132,9 @@
 
 <svelte:head>
 	<title>KENDAN</title>
+	<meta property="og:title" content="Ken Daniele Ramiscal" />
+	<meta property="og:url" content="https://kendan.dev" />
+	<meta property="og:image" content="/og/homepage.png" />
 </svelte:head>
 <div class="min-h-[calc(100dvh-96px)] pt-12">
 	<div class="flex flex-col items-center gap-12 lg:flex-row lg:justify-center">
