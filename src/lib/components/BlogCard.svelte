@@ -26,7 +26,9 @@
 					{title}
 				</h2>
 
-				<p class="line-clamp-3 max-h-[8ch] overflow-hidden text-sm sm:text-base">
+				<p
+					class="dark:text-neutrals-300 text-neutrals-700 line-clamp-3 max-h-[8ch] overflow-hidden text-sm sm:text-base"
+				>
 					{description}
 				</p>
 			</div>

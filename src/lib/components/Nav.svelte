@@ -38,7 +38,7 @@
 		<div class="hidden items-center gap-3 sm:flex">
 			<NavLink href="/">Home</NavLink>
 			<NavLink href="/blog">Blog</NavLink>
-			<Button variant="neutral" class="dark:bg-primary-600 ">
+			<Button variant="neutral" class="dark:bg-primary-600 " href={'/CV.pdf'}>
 				<svg
 					width="20"
 					height="20"

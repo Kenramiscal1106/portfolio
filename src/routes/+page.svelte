@@ -21,14 +21,15 @@
 	import DiscordIcon from '$lib/icons/socials/DiscordIcon.svelte';
 	import { project } from '$lib/store.svelte';
 	import ViewProject from '$lib/components/ViewProject.svelte';
+	import Event from '$lib/components/Event.svelte';
 
 	const cssVar = (name: string) => ($el: DOMTargetSelector) => utils.get($el, name);
 	let animating = $state(true);
 	onMount(() => {
-		window.scrollTo({
-			top: 0,
-			behavior: 'instant'
-		});
+		// window.scrollTo({
+		// 	top: 0,
+		// 	behavior: 'instant'
+		// });
 		const { chars } = text.split('#intromsg', {
 			chars: { wrap: 'visible' }
 		});
@@ -46,16 +47,21 @@
 				duration: 500
 			})
 			.add(svg.createDrawable('#heroDraw'), {
-				draw: ['0 0', '0 1', '1 1'],
-				duration: 4000,
+				draw: ['0 0', '0 1'],
+				duration: 2000,
 				ease: 'inOutSine'
+			})
+			.add('#heroDraw', {
+				opacity: [1, 0],
+				duration: 175
 			})
 			.add(
 				"[alt='Hero Section']",
 				{
-					opacity: [0, 1]
+					opacity: [0, 1],
+					duration: 175
 				},
-				'-=2000'
+				'-=350'
 			)
 			.add('#greeting', {
 				opacity: [0, 1],
@@ -90,22 +96,21 @@
 		}).add(['#skill-set h2', '.anime-skillset > *'], {
 			opacity: [0, 1],
 			scale: [0.9, 1],
-			delay: stagger(250)
+			delay: stagger(250),
+			ease: 'outExpo'
 		});
 
-		createTimeline({
-			autoplay: onScroll({
-				container: 'body',
-				enter: '25% top',
-				target: '#projects-created'
-			}),
-			defaults: {
-				duration: 250
-			}
-		}).add(['#projects-created h2', '.anime-projects > *'], {
+		animate(['#projects-created h2', '.anime-projects > article'], {
+			duration: 300,
+			delay: stagger(250),
+			ease: 'outExpo',
 			opacity: [0, 1],
 			scale: [0.9, 1],
-			delay: stagger(250)
+			autoplay: onScroll({
+				container: 'body',
+				enter: '30% top',
+				target: '#projects-created'
+			})
 		});
 
 		// const projectTimeline = createTimeline({})
@@ -239,48 +244,41 @@
 </div>
 <div class="section-container">
 	<div>
-		<h2 id="events-participated">Events Participated</h2>
-		<div
-			class="bg-neutrals-100 dark:bg-neutrals-800 space-y-3 rounded-xl p-5 shadow-lg drop-shadow-lg"
-		>
-			<h3 class="text-center text-xl font-bold">
-				<a
-					href="https://www.facebook.com/share/p/171YTqPAy5/"
-					class="text-primary-600 dark:text-primary-400 inline-flex items-center gap-1 underline"
-					target="_blank"
-					>Byte Forward Hackathon
-					<svg
+		<h2>Events Participated</h2>
+		<div class="bg-neutrals-100 dark:bg-neutrals-800 rounded-2xl px-6 py-8 shadow-lg">
+			<Event
+				imgSrc="/images/hackathon/stolen.jpg"
+				imgAlt="People discussing the problem statement and formulating an initial solution"
+			>
+				<div class="flex items-center gap-2">
+					<img
+						src="/images/hackathon/byteforward.png"
+						alt="Logo of the Hackathon Participated"
+						class="h-auto w-10 rounded-lg"
+					/>
+					<h3 class="text-lg font-bold">ByteForward Hackathon</h3>
+				</div>
+				<p>
+					Being part of the top 10 teams selected out of 40+ teams in CALABARZON. Me and my
+					colleagues joined to tackle different problems in the industry using Artificial
+					Intelligence.
+				</p>
+				<Button href="https://www.facebook.com/share/p/171YTqPAy5/" variant="neutral"
+					>Learn More<svg
 						width="20"
 						height="20"
 						viewBox="0 0 20 20"
 						fill="none"
 						xmlns="http://www.w3.org/2000/svg"
-					>
-						<path
+						><path
 							fill-rule="evenodd"
 							clip-rule="evenodd"
 							d="M5.27459 14.7254C4.90847 14.3593 4.90847 13.7657 5.27459 13.3996L11.7992 6.875H7.1875C6.66973 6.875 6.25 6.45527 6.25 5.9375C6.25 5.41973 6.66973 5 7.1875 5H14.0625C14.5803 5 15 5.41973 15 5.9375V12.8125C15 13.3303 14.5803 13.75 14.0625 13.75C13.5447 13.75 13.125 13.3303 13.125 12.8125V8.20083L6.60041 14.7254C6.2343 15.0915 5.6407 15.0915 5.27459 14.7254Z"
-							fill="currentColor"
-						/>
-					</svg>
-				</a>
-			</h3>
-			<div class="flex flex-wrap gap-3">
-				<div>
-					<img
-						src="images/hackathon/stolen.jpg"
-						alt="Product planning and Researching"
-						class="max-h-65 w-auto rounded-lg"
-					/>
-				</div>
-				<div>
-					<img
-						src="images/hackathon/stage.jpg"
-						alt="Stage Presentation for product"
-						class="max-h-65 w-auto rounded-lg"
-					/>
-				</div>
-			</div>
+							fill="#F9FAFA"
+						></path></svg
+					></Button
+				>
+			</Event>
 		</div>
 	</div>
 </div>
@@ -292,7 +290,10 @@
 <style lang="postcss">
 	@reference 'tailwindcss';
 	h2 {
-		@apply my-4 text-center text-2xl font-bold;
+		@apply my-4 text-center text-3xl font-bold;
+	}
+	h3 {
+		@apply text-2xl;
 	}
 
 	/* div.link-set svg {

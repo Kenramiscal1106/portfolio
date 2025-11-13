@@ -7,7 +7,7 @@
 		outline:
 			'border-neutrals-200 border-2 hover:border-neutrals-300 active:bg-neutrals-200 active:border-transparent dark:border-neutrals-700 dark:hover:border-neutrals-600 dark:active:bg-neutrals-700 dark:active:border-transparent',
 		ghost:
-			'hover:bg-neutrals-200 active:bg-neutrals-300 dark:hover:bg-neutrals-800 dark:active:bg-neutrals-900'
+			'hover:bg-neutrals-200 active:bg-neutrals-300 dark:hover:bg-neutrals-700 dark:active:bg-neutrals-900'
 	};
 	interface Props {
 		children: Snippet;
@@ -47,7 +47,7 @@
 	<button
 		class="flex items-center justify-center gap-2 rounded-lg {iconOnly
 			? 'p-1.5'
-			: 'px-3 py-1.5 sm:px-4 sm:py-2'} transition-colors duration-100 {btnclass[
+			: 'px-3 py-1.5 sm:px-4 sm:py-2'} transition-colors duration-150 {btnclass[
 			variant
 		]} {className ?? ''}"
 		{...props}

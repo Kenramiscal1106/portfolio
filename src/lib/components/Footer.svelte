@@ -62,7 +62,7 @@
 				</div>
 			</div>
 		</div>
-		<hr class="border-neutrals-800 m-0" />
+		<hr class="border-neutrals-600 m-0" />
 		<div class="flex items-center gap-2 text-sm">
 			<svg class="h-7 w-auto" viewBox="0 0 19 22" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<g opacity="0.6">
