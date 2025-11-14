@@ -10,11 +10,15 @@
 </svelte:head>
 
 <div class="flex flex-col gap-6">
-	<FeaturedBlog {...data.posts[0]} />
-	<h2 class="text-center text-2xl font-bold">Other articles</h2>
-	<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-		{#each data.posts.slice(1) as post, i}
-			<BlogCard {...post} />
-		{/each}
-	</div>
+	{#if data.posts.length > 0}
+		<FeaturedBlog {...data.posts[0]} />
+		<h2 class="text-center text-2xl font-bold">Other articles</h2>
+		<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+			{#each data.posts.slice(1) as post}
+				<BlogCard {...post} />
+			{/each}
+		</div>
+	{:else}
+		<h1 class="text-center text-2xl font-bold">There are no blogs available</h1>
+	{/if}
 </div>

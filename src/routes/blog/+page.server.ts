@@ -5,7 +5,6 @@ async function getPosts() {
 	const posts: Post[] = [];
 
 	const paths = import.meta.glob('/src/blogs/*.svx', { eager: true });
-	// console.log(paths);
 	Object.keys(paths).forEach((path) => {
 		const file = paths[path];
 		const slug = path.split('/').at(-1)?.replace('.svx', '');
