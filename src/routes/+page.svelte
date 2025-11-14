@@ -274,7 +274,9 @@
 					colleagues joined to tackle different problems in the industry using Artificial
 					Intelligence.
 				</p>
-				<Button href="https://www.facebook.com/share/p/171YTqPAy5/" variant="neutral"
+				<Button
+					href="https://www.facebook.com/photo.php?fbid=802148725540178&set=pb.100072351740106.-2207520000&type=3"
+					variant="neutral"
 					>Learn More<svg
 						width="20"
 						height="20"
