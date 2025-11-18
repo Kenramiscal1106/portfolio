@@ -275,7 +275,7 @@
 					Intelligence.
 				</p>
 				<Button
-					href="https://www.facebook.com/photo.php?fbid=802148725540178&set=pb.100072351740106.-2207520000&type=3"
+					href="https://www.linkedin.com/posts/rev21-labs-inc_watch-the-thrilling-finale-of-our-5-leg-nationwide-activity-7396045722220969984-zAty?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFz6YCABWO6nYdEsA49SxAEhxCHX-RfNAU4"
 					variant="neutral"
 					>Learn More<svg
 						width="20"
