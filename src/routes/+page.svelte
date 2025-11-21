@@ -22,6 +22,8 @@
 	import { project } from '$lib/store.svelte';
 	import ViewProject from '$lib/components/ViewProject.svelte';
 	import Event from '$lib/components/Event.svelte';
+	import ExercismIcon from '$lib/icons/socials/ExercismIcon.svelte';
+	import DribbbleIcon from '$lib/icons/socials/DribbbleIcon.svelte';
 
 	const cssVar = (name: string) => ($el: DOMTargetSelector) => utils.get($el, name);
 	let animating = $state(true);
@@ -196,6 +198,24 @@
 				>
 					<LinkedinIcon />
 				</a>
+				<a
+					href="https://exercism.org/profiles/Kenramiscal1106"
+					title="Exercism Profile"
+					aria-label="Exercism Profile"
+					target="_blank"
+					class="hover:text-neutrals-600 active:text-neutrals-800"
+				>
+					<ExercismIcon />
+				</a>
+				<a
+					href="https://dribbble.com/ramiscalken"
+					title="Dribbble Profile"
+					aria-label="Dribbble Profile"
+					target="_blank"
+					class="hover:text-neutrals-600 active:text-neutrals-800"
+				>
+					<DribbbleIcon />
+				</a>
 			</div>
 
 			<Button
@@ -256,9 +276,11 @@
 <div class="section-container">
 	<div>
 		<h2>Events Participated</h2>
-		<div class="bg-neutrals-100 dark:bg-neutrals-800 rounded-2xl px-6 py-8 shadow-lg">
+		<div
+			class="bg-neutrals-100 dark:bg-neutrals-800 rounded-2xl px-3 py-4 shadow-lg sm:px-6 sm:py-8"
+		>
 			<Event
-				imgSrc="/images/hackathon/stolen.jpg"
+				imgSrc="/images/hackathon/featured.png"
 				imgAlt="People discussing the problem statement and formulating an initial solution"
 			>
 				<div class="flex items-center gap-2">
